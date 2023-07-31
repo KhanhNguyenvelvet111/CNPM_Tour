@@ -6,5 +6,67 @@
     ViewBag.qldt = "active";
 }
 
-<h2>QLDoiTac</h2>
+<body>
+    @* table 1*@
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="#">
+                <i class="fas fa-plus"> </i> Thêm Đối tác
+            </a>
+
+            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="#">
+                <i class="fas fa-solid fa-print"> </i>  Làm mới danh sách
+            </a>
+
+            <div class="tile">
+
+                <h2 class="tile-title">Danh sách Đối tác</h2>
+                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Mã Đối tác</th>
+                            <th class="text-center">
+                                Tên Đối tác
+                            </th>
+                            <th class="text-center">
+                                Loại doanh nghiệp
+                            </th>
+                            <th class="text-center">
+                                Chức năng
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                gdfgdfg
+                            </td>
+                            <td class="text-center">
+                                dsgf gdf
+                            </td>
+                            <td class="text-center">
+                                dsgf gdf
+                            </td>
+                            <td class="text-center">
+                                <a class="" href="~/Admin/CTDoiTac">Chi tiết</a>
+                                <span> || </span>
+                                <a class="" href="#">Xóa</a>
+
+                                @*<a class="btn btn-cancel" title="Edit" href="#">
+                <i class="fas fa-edit"></i>
+            </a>
+            <a class="btn btn-excel" ata-toggle="tooltip" title="Delete" data-target="#" data-toggle="modal">
+                <i class="fas fa-trash"></i>
+            </a>*@
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                @*<a class="btn btn-cancel" title="Trở lại" href="~/Tourmanager/QuanLyTour">
+                        Trở lại
+                    </a>*@
+            </div>
+        </div>
+    </div>
+</body>
 

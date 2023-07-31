@@ -6,5 +6,76 @@
     ViewBag.ctkm = "active";
 }
 
-<h2>ChuongTrinhKhuyenMai</h2>
+<body>
+    @* table 1*@
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="#">
+                <i class="fas fa-plus"> </i> Thêm CTKM
+            </a>
+            <a class="btn btn-sm btn-print " type="button" title="In danh sách" href="#">
+                <i class="fas fa-solid fa-print"> </i>  In danh sách
+            </a>
+            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="#">
+                <i class="fas fa-solid fa-print"> </i>  Làm mới danh sách
+            </a>
 
+            <div class="tile">
+
+                <h2 class="tile-title">Danh sách Chương trình khuyến mãi</h2>
+                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
+                    <thead>
+                        <tr>
+                            <th class="text-center">
+                            Mã Sự kiện
+                            </th>
+                            <th class="text-center">
+                                Ngày diễn ra
+                            </th>
+                            <th class="text-center">
+                                Mã đối tác
+                            </th>
+                            <th class="text-center">
+                                Số lượng
+                            </th>                           
+                            <th class="text-center">
+                                Chức năng
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                gdfgdfg
+                            </td>
+                            <td class="text-center">
+                                g dfgd dfg
+                            </td>
+                            <td class="text-center">
+                                dsgf gdf
+                            </td>
+                            <td class="text-center">
+                                dsgf gdf
+                            </td>                          
+                            <td class="text-center">
+                                <a class="" href="~/Admin/CTCTKM">Chi tiết</a>
+                                <span> || </span>
+                                <a class="" href="#">Hủy</a>
+
+                                @*<a class="btn btn-cancel" title="Edit" href="#">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a class="btn btn-excel" ata-toggle="tooltip" title="Delete" data-target="#" data-toggle="modal">
+                                        <i class="fas fa-trash"></i>
+                                    </a>*@
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                @*<a class="btn btn-cancel" title="Trở lại" href="~/Tourmanager/QuanLyTour">
+                        Trở lại
+                    </a>*@
+            </div>
+        </div>
+    </div>
+</body>

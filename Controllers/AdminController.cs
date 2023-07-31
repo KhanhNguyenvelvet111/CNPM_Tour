@@ -54,5 +54,15 @@ namespace CNPM_Tour.Controllers
 
             return View();
         }
+        public ActionResult CTCTKM()
+        {
+
+            return View();
+        }
+        public ActionResult CTDoiTac()
+        {
+
+            return View();
+        }
     }
 }
