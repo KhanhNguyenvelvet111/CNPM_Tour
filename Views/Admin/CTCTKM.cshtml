@@ -6,5 +6,88 @@
     ViewBag.ctkm = "active";
 }
 
-<h2>CTCTKM</h2>
+<body>
+    <div class="" style="width: 185px; white-space: nowrap; margin: 4px auto; border: 2px solid #000; border-radius: 10px; padding-top: 10px; ">
+        <div class="" style="height: 100%;   display: flex;   justify-content: center;   align-items: center;">
+            <p class="" style="font-size: 24px;  font-weight: bold;">Chi tiết Sự kiện</p>
+        </div>
+    </div>
+
+    @* table 1*@
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile" style="padding-bottom: 70px">
+                <form action="/action_page.php">
+                    <table class="table table-bordered js-copytextarea dataTable no-footer" style="width:100%" cellpadding="0" cellspacing="0" border="0" role="grid" aria-describedby="sampleTable_info">
+                        <tr style="display:flex;width:100%">
+                            <td>
+                                <label for="fname">Mã Sự kiện:</label>
+                                <input type="text" id="fname" name="fname" style="border:none ; width:auto">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="fname">Tên Sự kiện:</label>
+                                <input type="text" id="fname" name="fname" style="border:none">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="fname">Mô tả Sự kiện:</label>
+                                <input type="text" id="fname" name="fname" style="border:none">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="fname">Ngày diễn ra:</label>
+                                <input type="text" id="fname" name="fname" style="border:none">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="fname">Mã đối tác:</label>
+                                <input type="text" id="fname" name="fname" style="border:none">
+                            </td>
+
+                        </tr>
+                        @*<form action="/action_page.php">*@
+                        <tr>
+                            <td style="width: 5%">
+                                <label for="fname">Số lượng:</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="fav_language">
+                                <label>Vô hạn</label> <br />
+                                <input type="radio" name="fav_language">
+                                <label>Giới hạn</label>
+                                <input type="text" id="fname" name="fname" style="border:none; border-bottom: 1px solid black">
+                            </td>
+                        </tr>
+                        @* </form> *@
+
+                        <tr>
+                            <td>
+                                <label for="fname">Giá gốc:</label>
+                                <input type="text" id="fname" name="fname" style="border:none">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="fname">Phần trăm:</label>
+                                <input type="text" id="fname" name="fname" style="border:none">
+                            </td>
+
+                        </tr>
+                    </table>
+                    <a href="#" style=" text-align: right; float:right; white-space: nowrap; margin: 4px auto; border: 2px solid #000; padding: 5px; font-size: 20px; font-weight: bold; border-radius: 5px ">Lưu</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
 
