@@ -1,0 +1,60 @@
+﻿body {
+    width: auto;
+}
+
+#Logo {
+    font-size: 40px;
+    margin-left: 20px;
+}
+
+.Inner, .InvisibleButton {
+    display: inline;
+}
+
+#Right {
+    float: right;
+}
+
+.InvisibleButton {
+    border: hidden;
+    background-color: #FFFFFF;
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+nav, .TaskbarButton {
+    background-color: #E0E0E0;
+    width: 100%;
+}
+
+.TaskbarButton {
+    border: hidden;
+    font-size: 20px;
+}
+
+.SearchBar {
+    border: hidden;
+    font-size: 30px;
+    width: 1000px;
+}
+
+.SearchBar input {
+    width: 80%;
+}
+
+.SearchButton {
+    border: hidden;
+    background-color: #3399FF;
+    color: #FFFFFF;
+    font-size: 30px;
+}
+
+#SideBar {
+    float: left;
+}
+
+.SideButton {
+    background-color: #FFFFFF;
+    border: hidden;
+    font-size: 20px;
+}
