@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CNPM_Tour.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +9,10 @@ namespace CNPM_Tour.Controllers
 {
     public class AdminController : Controller
     {
-        
+        private CNPMEntities db = new CNPMEntities();
         public ActionResult TrangChu()
         {
-
-            return View();
+            return View(db.Partners.ToList());
         }
         public ActionResult QLTour()
         {
@@ -64,5 +64,8 @@ namespace CNPM_Tour.Controllers
 
             return View();
         }
+
+
+
     }
 }

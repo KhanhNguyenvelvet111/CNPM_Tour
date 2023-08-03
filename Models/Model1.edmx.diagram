@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="06ca2d853df445ea95a5585530416685" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="CNPMModel.Coupon" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.KhachHang" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.LoaiKH" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.LT_Tour" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.NgonNgu" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.NhanVien" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.PacketTour" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.Partner" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.PhieuDC" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.PhuongThucThanhToan" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.TKTT" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.Tour" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.CT_LTTour" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.NgayBan" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.Picture" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CNPMModel.UserPoint" Width="1.5" PointX="7.5" PointY="15.5" IsExpanded="true" />
+        <AssociationConnector Association="CNPMModel.FK__KhachHang__MaLKH__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__PhieuDC__MaKH__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__UserPoints__MaKH__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__CT_LTTour__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__LT_Tour__MaTour__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__NgayBan__MaPT__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__PacketTou__MaTou__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__PacketTou__STK_N__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__PhieuDC__MaPT__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__TKTT__MaDT__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__Tour__MaDT__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__PhieuDC__MaPTTT__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.FK__Picture__MaTour__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.HoTro" ManuallyRouted="false" />
+        <AssociationConnector Association="CNPMModel.SoHuu" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

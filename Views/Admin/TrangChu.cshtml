@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<CNPM_Tour.Models.Partner>
 @{
     ViewBag.Title = "TrangChu";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
@@ -15,61 +15,66 @@
                 <h2 class="tile-title">Tour đã thêm gần đây</h2>
 
                 @*<a class="btn btn-sm btn-add " type="button" title="CreateTour" href="/Tourmanager/CreateLoaiTour">
-            <i class="fas fa-plus"> </i> Tạo mới
-        </a>*@
+                        <i class="fas fa-plus"> </i> Tạo mới
+                    </a>*@
                 <table class="table table-hover table-bordered js-copytextarea no-footer" cellpadding="0" cellspacing="0" border="0" role="grid" aria-describedby="sampleTable_info">
                     <thead>
                         <tr>
-                            <th>Mã tour</th>
                             <th>
-                                Tên tour
+                                @Html.DisplayNameFor(model => model.TenDT)
                             </th>
                             <th>
-                                Thời gian mở bán
+                                @Html.DisplayNameFor(model => model.MaQG)
                             </th>
                             <th>
-                                Giá vé (VND)
+                                @Html.DisplayNameFor(model => model.SDT)
                             </th>
                             <th>
-                                Ghi chú
+                                @Html.DisplayNameFor(model => model.DiaChi)
                             </th>
                             <th>
-                                Chức năng
+                                @Html.DisplayNameFor(model => model.Email)
                             </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Website)
+                            </th>
+                            <th></th>
                         </tr>
                     </thead>
-                    <tbody>
+
+
+                    @foreach (var item in Model)
+                    {
                         <tr>
-                            <td class="text-center">
-                                gdfgdfg
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenDT)
                             </td>
-                            <td class="text-center">
-                                g dfgd dfg
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaQG)
                             </td>
-                            <td class="text-center">
-                                dsgf gdf
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SDT)
                             </td>
-                            <td class="text-center">
-                                dsgf gdf
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiaChi)
                             </td>
-                            <td class="text-center">
-                                dsgf gdf
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
                             </td>
-                            <td class="text-center">
-                                sdfgdfg
-                                @*<a class="btn btn-cancel" title="Edit" href="#">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-excel" ata-toggle="tooltip" title="Delete" data-target="#" data-toggle="modal">
-                            <i class="fas fa-trash"></i>
-                        </a>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Website)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.MaDT }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.MaDT }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.MaDT })
                             </td>
                         </tr>
-                    </tbody>
+                    }
                 </table>
                 @*<a class="btn btn-cancel" title="Trở lại" href="~/Tourmanager/QuanLyTour">
-            Trở lại
-        </a>*@
+                        Trở lại
+                    </a>*@
             </div>
         </div>
 

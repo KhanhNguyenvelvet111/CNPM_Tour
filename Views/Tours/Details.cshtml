@@ -1,0 +1,75 @@
+﻿@model CNPM_Tour.Models.Tour
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Admin/Layout/_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaDiem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaDiem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TTVC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTVC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BannerPic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BannerPic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Partner.TenDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Partner.TenDT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaTour }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
