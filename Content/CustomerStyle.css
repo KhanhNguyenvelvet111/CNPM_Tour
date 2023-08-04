@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
     background-color: #FFFFFF;
 }
 
-.InvisibleButton, .NormalButton, .SigninButton, .OrangeButton, .SideButton {
+.InvisibleButton, .NormalButton, .SigninButton, .OrangeButton, .SideButton, .SideBlueButton {
     border: hidden;
 }
 
@@ -73,9 +73,20 @@ h1, h2, h3, h4 {
     background-color: #FFFFFF;
 }
 
-.SideButton {
+.SideButton, .SideBlueButton {
     font-size: 20px;
 }
+
+.SideBlueButton {
+    background-color: #0000CC;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+    .SideBlueButton:hover {
+        background-color: #3399FF;
+        width: 100%;
+    }
 
 .CheckBoxButton {
     width: 20px;

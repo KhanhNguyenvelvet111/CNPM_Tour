@@ -29,5 +29,9 @@ namespace CNPM_Tour.Controllers
         {
             return View();
         }
+        public ActionResult Pay()
+        {
+            return View();
+        }
     }
 }

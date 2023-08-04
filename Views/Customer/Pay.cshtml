@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Pay";
+    Layout = "_WhiteBlank.cshtml";
+}
+
+<body>
+    <link href="~/Content/CustomerStyle.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" />
+
+    <button type="button" id="Logo" class="NormalButton">Traveloka</button>
+    <div style="background-color: #E0E0E0; padding: 20px">
+        <h2>Thanh toán</h2>
+        <br />
+        <div class="Left" style="background-color: #0000CC; width: 300px; padding: 10px; margin-top: 20px">
+            <h3 style="color: #FFFFFF">TravelokaPay</h3>
+            <br />
+            <div>
+                <button type="button" class="SideBlueButton">Thẻ thanh toán</button>
+                <br />
+                <button type="button" class="SideBlueButton">Chuyển khoản ngân hàng</button>
+                <br />
+                <button type="button" class="SideBlueButton">Tại cửa hàng</button>
+                <br />
+                <button type="button" class="SideBlueButton">ATM nội địa</button>
+            </div>
+        </div>
+        <div class="Right" style="background-color: #FFFFFF; padding: 10px">
+            <h4>Mã đặt chỗ</h4>
+            <br />
+            <h4 name="Id">123456</h4>
+            <hr />
+            <h4>Chi tiết đặt chỗ</h4>
+            <br />
+            <h4 name="Tourname">Name</h4>
+            <div class="row">
+                <h4 class="col">Ngày tham quan</h4>
+                <h4 class="col" name="Date">Th 7, 2 thng 9, 2023</h4>
+            </div>
+            <div class="row">
+                <h4 class="col">Áp dụng cho</h4>
+                <h4 class="col" name="Customer">Người lớn: 1</h4>
+            </div>
+        </div>
+    </div>
+</body>
+
