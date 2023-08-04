@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "ConfirmTour";
+    Layout = "_WhiteBlank.cshtml";
+}
+
+<body>
+    <link href="~/Content/CustomerStyle.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" />
+
+    <button type="button" id="Logo" class="NormalButton">Traveloka</button>
+    <div style="background-color: #E0E0E0; padding: 20px">
+        <h2>Đặt chỗ của tôi</h2>
+        <br />
+        <h4>Điền thông tin và xem lại chỗ</h4>
+        <div style="background-color: #FFFFFF">
+            <h4 name="loginwith">Đăng nhập với tên ...</h4>
+            <h4 name="email">(abc123@gmail.com)</h4>
+        </div>
+        <br />
+        <h2>Thông tin liên hệ</h2>
+        <div style="background-color: #FFFFFF">
+            <div class="row">
+                <h4 name="CusName" class="col">Name</h4>
+                <div class="col"><button type="button" class="NormalButton" style="color: #3399FF">Chỉnh sửa chi tiết</button></div>
+                <hr />
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Số di động</h4>
+                    <br />
+                    <h3 name="phone">Phone number</h3>
+                </div>
+                <div class="col">
+                    <h4>Email</h4>
+                    <br />
+                    <h3 name="emailname">abc123@gmail.com</h3>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col">
+                    <input type="button" class="CheckBoxButton" />
+                    <h3>Tôi là khách tham quan</h3>
+                </div>
+                <div class="col">
+                    <input type="button" class="CheckBoxButton" />
+                    <h3>Tôi đặt cho người khác</h3>
+                </div>
+            </div>
+        </div>
+        <br />
+        <h2>Thông tin khách hàng</h2>
+        <div style="background-color: #FFFFFF">
+            <div class="row">
+                <h3 class="col" name="Custype">Người lớn 1</h3>
+                <div class="col"><button type="button" class="NormalButton" style="color: #3399FF">Lưu</button></div>
+            </div>
+            <h3>Họ tên</h3>
+            <input type="text" />
+            <div class="row">
+                <div class="col">
+                    <h3>Điện thoại di động</h3>
+                    <input type="text" />
+                </div>
+                <div class="col">
+                    <h3>Email</h3>
+                    <input type="text" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Right"><button type="button" class="OrangeButton" style="font-size: 50px">Tiếp tục</button></div>
+</body>
+

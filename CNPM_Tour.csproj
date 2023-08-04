@@ -213,11 +213,13 @@
     <Content Include="Views\Admin\BaoCaoTaiChinh.cshtml" />
     <Content Include="Views\Admin\HoTroKH.cshtml" />
     <Content Include="Views\Admin\CTTour.cshtml" />
-    <Content Include="Views\Admin\Layout\_Customer.cshtml" />
     <Content Include="Views\Customer\HomePage.cshtml" />
+    <Content Include="Views\Customer\AccountDetail.cshtml" />
     <Content Include="Views\Customer\TourPage.cshtml" />
     <Content Include="Views\Customer\TourDetail.cshtml" />
-    <Content Include="Views\Customer\AccountDetail.cshtml" />
+    <Content Include="Views\Customer\ConfirmTour.cshtml" />
+    <Content Include="Views\Customer\_CustomerLayout.cshtml" />
+    <Content Include="Views\Customer\_WhiteBlank.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

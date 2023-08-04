@@ -1,21 +1,25 @@
 ﻿
 @{
     ViewBag.Title = "TourPage";
-    Layout = "~/Views/Admin/Layout/_Customer.cshtml";
+    Layout = "_CustomerLayout.cshtml";
 }
 
 <body>
-    <div name="Search" class="container">
-        <input type="search" class="SearchBar" placeholder="Search" />
-        <button type="button" class="SearchButton">Tìm kiếm</button>
+    <link href="~/Content/CustomerStyle.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" />
+
+    <div style="padding: 20px; margin-top: 100px">
+        <div name="Search">
+            <input type="search" id="SearchBar" placeholder="Search" />
+            <button type="button" id="SearchButton">Tìm kiếm</button>
+        </div>
+        <h1>Các tour bán chạy</h1>
+        <br />
+        <h1>Tour trọn gói xuất ngoại</h1>
+        <br />
+        <h1>Tour theo chủ đề</h1>
+        <br />
+        <h1>Du lịch khắp thế giới</h1>
     </div>
-    <br />
-    <h2>Các tour bán chạy</h2>
-    <br />
-    <h2>Tour trọn gói xuất ngoại</h2>
-    <br />
-    <h2>Tour theo chủ đề</h2>
-    <br />
-    <h2>Du lịch khắp thế giới</h2>
 </body>
 

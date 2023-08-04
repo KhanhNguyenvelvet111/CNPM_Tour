@@ -1,5 +1,13 @@
 ﻿body {
-    width: auto;
+    width: 100%;
+}
+
+h1, h2, h3, h4 {
+    display: inline-block;
+}
+
+.Inner, .InvisibleButton, #UpperTaskbar {
+    display: inline;
 }
 
 #Logo {
@@ -7,24 +15,38 @@
     margin-left: 20px;
 }
 
-.Inner, .InvisibleButton {
-    display: inline;
-}
-
-#Right {
-    float: right;
-}
-
-.InvisibleButton {
-    border: hidden;
+#UpperTaskbar {
     background-color: #FFFFFF;
+}
+
+.InvisibleButton, .NormalButton, .SigninButton, .OrangeButton, .SideButton {
+    border: hidden;
+}
+
+.NormalButton {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: hidden;
     font-size: 20px;
     margin-right: 50px;
 }
 
-nav, .TaskbarButton {
+.OrangeButton {
+    background-color: #FF8000;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.SigninButton {
+    background-color: #3399FF;
+    color: #FFFFFF;
+    border: hidden;
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+#Taskbar, .TaskbarButton {
     background-color: #E0E0E0;
-    width: 100%;
 }
 
 .TaskbarButton {
@@ -32,29 +54,38 @@ nav, .TaskbarButton {
     font-size: 20px;
 }
 
-.SearchBar {
-    border: hidden;
+#Search {
     font-size: 30px;
-    width: 1000px;
+    background-color: #FFFFFF;
 }
 
-.SearchBar input {
-    width: 80%;
+.Right {
+    float: right;
+    margin-right: 50px;
 }
 
-.SearchButton {
-    border: hidden;
-    background-color: #3399FF;
-    color: #FFFFFF;
-    font-size: 30px;
-}
-
-#SideBar {
+.Left, #SideBar {
     float: left;
+    margin-left: 50px;
+}
+
+#SideBar, .SideButton {
+    background-color: #FFFFFF;
 }
 
 .SideButton {
-    background-color: #FFFFFF;
-    border: hidden;
     font-size: 20px;
 }
+
+.CheckBoxButton {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    vertical-align: middle;
+}
+
+    .CheckBoxButton:checked {
+        background-color: #3399FF;
+    }

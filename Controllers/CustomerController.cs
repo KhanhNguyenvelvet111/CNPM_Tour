@@ -13,6 +13,10 @@ namespace CNPM_Tour.Controllers
         {
             return View();
         }
+        public ActionResult AccountDetail()
+        {
+            return View();
+        }
         public ActionResult TourPage()
         {
             return View();
@@ -21,7 +25,7 @@ namespace CNPM_Tour.Controllers
         {
             return View();
         }
-        public ActionResult AccountDetail()
+        public ActionResult ConfirmTour()
         {
             return View();
         }

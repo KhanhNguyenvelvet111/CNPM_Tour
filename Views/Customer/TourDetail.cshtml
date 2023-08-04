@@ -1,7 +1,54 @@
 ﻿
 @{
     ViewBag.Title = "TourDetail";
+    Layout = "_CustomerLayout.cshtml";
 }
 
-<h2>TourDetail</h2>
+<body>
+    <link href="~/Content/CustomerStyle.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" />
+
+    <div style="padding: 20px; margin-top: 100px">
+        <h2 name="TourTitle">Tour's Name</h2>
+        <img />
+        <div id="Right" style="background-color: #FFFFFF">
+            <h3>Giá từ</h3>
+            <h2>100.000 VND</h2>
+            <button type="button" class="OrangeButton" style="font-size: 40px">Tìm tour</button>
+            <h3>Ngày có vé tiếp theo</h3>
+            <h3>Các ngôn ngữ có sẵn: </h3>
+            <h3 name="Language">Language...</h3>
+        </div>
+        <div style="margin: 20px">
+            <h2>Chi tiết sản phẩm</h2>
+            <h3>Điểm nổi bật</h3>
+            <h4 name="SpecialInfo"></h4>
+            <br />
+            <h3>Lịch trình tour</h3>
+            <h3>Bạn sẽ trải nghiệm</h3>
+            <br />
+            <h2>Thông tin địa điểm</h2>
+            <br />
+            <h3>Khả dụng vào ngày khác</h3>
+            <div class="container" style="background-color: #FFFFFF">
+                <h4 name="TicketName">[PROMO] Name</h4>
+                <div class="row" style="margin: 20px; background-color: #E0E0E0">
+                    <div class="col">
+                        <h4>Khả dụng ngày đã chọn</h4>
+                        <h4 name="Booked">Không cần đặt chỗ trước</h4>
+                        <h4 name="Refund">Easy Refund</h4>
+                    </div>
+                    <div class="col"><h2 class="Right" style="color: #FF8000">100.000 VND</h2></div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col"><button type="button" class="NormalButton" style="color: #3399FF">Xem chi tiết</button></div>
+                    <div class="col"><button type="button" class="OrangeButton" style="font-size: 30px">Chọn</button></div>
+                </div>
+            </div>
+            <br />
+            <h2>Đánh giá</h2>
+        </div>
+    </div>
+</body>
 

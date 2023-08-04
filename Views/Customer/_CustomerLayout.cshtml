@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+    <link href="~/Content/CustomerStyle.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" />
+
+    <div style="position: fixed">
+        <div name="UpperTaskbar" id="UpperTaskbar">
+            <button type="button" id="Logo" class="NormalButton">Traveloka</button>
+            <div id="Right">
+                <button type="button" class="NormalButton">Hợp tác với chúng tôi</button>
+                <button type="button" class="NormalButton">Đã lưu</button>
+                <button type="button" class="NormalButton">Đặt chỗ của tôi</button>
+                <button type="button" class="NormalButton">Đăng nhập</button>
+                <button type="button" class="SigninButton">Đăng ký</button>
+            </div>
+        </div>
+        <div id="Taskbar">
+            <button type="button" class="TaskbarButton">Vận chuyển</button>
+            <button type="button" class="TaskbarButton">Chỗ ở</button>
+            <button type="button" class="TaskbarButton">Hoạt động và giải trí</button>
+            <button type="button" class="TaskbarButton">Sản phẩm bổ sung</button>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
