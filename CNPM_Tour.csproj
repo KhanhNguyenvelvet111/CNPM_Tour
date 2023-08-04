@@ -129,15 +129,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\KhachHangsController.cs" />
+    <Compile Include="Controllers\NhanViensController.cs" />
     <Compile Include="Controllers\PartnersController.cs" />
+    <Compile Include="Controllers\PhieuDCsController.cs" />
     <Compile Include="Controllers\ToursController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Coupon.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CT_LTTour.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
@@ -222,6 +222,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\avt.jpg" />
     <Content Include="Images\avt2.jpg" />
+    <Content Include="Images\concho.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -300,7 +301,7 @@
     <Content Include="Views\Admin\QLDoiTac.cshtml" />
     <Content Include="Views\Admin\BaoCaoTaiChinh.cshtml" />
     <Content Include="Views\Admin\HoTroKH.cshtml" />
-    <Content Include="Views\Admin\CTTour.cshtml" />
+    <Content Include="Views\Admin\TourDetails.cshtml" />
     <Content Include="Views\Admin\CTCTKM.cshtml" />
     <Content Include="Views\Admin\CTDoiTac.cshtml" />
     <Content Include="Views\Tours\Create.cshtml" />
@@ -313,6 +314,24 @@
     <Content Include="Views\Partners\Details.cshtml" />
     <Content Include="Views\Partners\Edit.cshtml" />
     <Content Include="Views\Partners\Index.cshtml" />
+    <Content Include="Views\KhachHangs\Create.cshtml" />
+    <Content Include="Views\KhachHangs\Delete.cshtml" />
+    <Content Include="Views\KhachHangs\Details.cshtml" />
+    <Content Include="Views\KhachHangs\Edit.cshtml" />
+    <Content Include="Views\KhachHangs\Index.cshtml" />
+    <Content Include="Views\NhanViens\Create.cshtml" />
+    <Content Include="Views\NhanViens\Delete.cshtml" />
+    <Content Include="Views\NhanViens\Details.cshtml" />
+    <Content Include="Views\NhanViens\Edit.cshtml" />
+    <Content Include="Views\NhanViens\Index.cshtml" />
+    <Content Include="Views\PhieuDCs\Create.cshtml" />
+    <Content Include="Views\PhieuDCs\Delete.cshtml" />
+    <Content Include="Views\PhieuDCs\Details.cshtml" />
+    <Content Include="Views\PhieuDCs\Edit.cshtml" />
+    <Content Include="Views\PhieuDCs\Index.cshtml" />
+    <Content Include="Views\Admin\ChinhSuaTour.cshtml" />
+    <Content Include="Views\Admin\XoaTour.cshtml" />
+    <Content Include="Views\Admin\TaoTour.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

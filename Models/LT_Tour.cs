@@ -14,10 +14,13 @@ namespace CNPM_Tour.Models
     
     public partial class LT_Tour
     {
+        public int ID_HD { get; set; }
         public int Ngay { get; set; }
         public string MaTour { get; set; }
+        public Nullable<System.TimeSpan> GioBD { get; set; }
+        public Nullable<System.TimeSpan> GioKT { get; set; }
+        public string HoatDong { get; set; }
     
-        public virtual CT_LTTour CT_LTTour { get; set; }
         public virtual Tour Tour { get; set; }
     }
 }

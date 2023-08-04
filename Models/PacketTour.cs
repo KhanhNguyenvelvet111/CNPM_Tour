@@ -21,6 +21,8 @@ namespace CNPM_Tour.Models
         }
     
         public string MaPT { get; set; }
+        public string MaTour { get; set; }
+        public string STK_NH { get; set; }
         public string TenPT { get; set; }
         public Nullable<int> Duration { get; set; }
         public int SLVoucher { get; set; }
@@ -33,12 +35,9 @@ namespace CNPM_Tour.Models
         public Nullable<int> GiaTraveloka_A { get; set; }
         public Nullable<int> GiaGoc_C { get; set; }
         public Nullable<int> GiaTraveloka_C { get; set; }
-        public string MaTour { get; set; }
-        public string STK_NH { get; set; }
     
         public virtual NgayBan NgayBan { get; set; }
         public virtual Tour Tour { get; set; }
-        public virtual TKTT TKTT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuDC> PhieuDCs { get; set; }
     }

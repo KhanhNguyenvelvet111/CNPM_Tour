@@ -1,4 +1,4 @@
-﻿
+﻿@model CNPM_Tour.Models.Tour
 @{
     ViewBag.Title = "CTTour";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
@@ -18,72 +18,34 @@
             <div class="tile">
                 <form action="/action_page.php">
                     <table class="table table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" role="grid" aria-describedby="sampleTable_info">
-                        <tr style="display:flex;width:100%" >
+                        <tr style="display:flex;width:100%">
                             <td>
                                 <label for="fname">Mã tour:</label>
+                                @Html.DisplayFor(model => model.MaTour)
                                 <input type="text" id="fname" name="fname" style="border:none ; width:auto">
                             </td>
-</tr>
-                     
+                        </tr>
+
                         <tr>
                             <td>
                                 <label for="fname">Tên tour:</label>
+                                @Html.DisplayFor(model => model.TenTour)
                                 <input type="text" id="fname" name="fname" style="border:none">
                             </td>
-                           
+
                         </tr>
                         <tr>
                             <td>
                                 <label for="fname">Địa điểm:</label>
+                                @Html.DisplayFor(model => model.DiaDiem)
                                 <input type="text" id="fname" name="fname" style="border:none">
                             </td>
-                            
+
                         </tr>
                         <tr>
                             <td>
                                 <label for="fname">Mô tả:</label>
-                                <input type="text" id="fname" name="fname" style="border:none">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="fname">Thời gian mở bán:</label>
-                                <input type="text" id="fname" name="fname" style="border:none">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="fname">Nhân viên duyệt:</label>
-                                <input type="text" id="fname" name="fname" style="border:none">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="fname">Tour đã bán:</label>
-                                <input type="text" id="fname" name="fname" style="border:none">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="fname">Tour chưa bán:</label>
-                                <input type="text" id="fname" name="fname" style="border:none">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="fname">Áp dụng khuyến mãi:</label>
-                                <input type="text" id="fname" name="fname" style="border:none">
-                            </td>
-                           
-                        </tr>
-                        <tr>
-                            <td>
-                                <label for="fname">Giá vé:</label>
+                                @Html.DisplayFor(model => model.MoTa)
                                 <input type="text" id="fname" name="fname" style="border:none">
                             </td>
 
@@ -91,18 +53,28 @@
                         <tr>
                             <td>
                                 <label for="fname">Trạng thái:</label>
+                                @Html.DisplayFor(model => model.forsale)
                                 <input type="text" id="fname" name="fname" style="border:none">
                             </td>
-
 
                         </tr>
                         <tr>
                             <td>
-                                <label for="fname">Ghi chú:</label>
+                                <label for="fname">Hình ảnh:</label>
+                                <img src="@Model.BannerUrl" />
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="fname">Đối tác:</label>
+                                @Html.DisplayFor(model => model.MaDT)
                                 <input type="text" id="fname" name="fname" style="border:none">
                             </td>
                         </tr>
+                        
                     </table>
+                    <a href="~/Admin/QLTour">Back to list</a>
                 </form>
             </div>
         </div>

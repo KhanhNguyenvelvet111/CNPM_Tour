@@ -18,7 +18,6 @@ namespace CNPM_Tour.Models
         public KhachHang()
         {
             this.PhieuDCs = new HashSet<PhieuDC>();
-            this.UserPoints = new HashSet<UserPoint>();
             this.Coupons = new HashSet<Coupon>();
         }
     
@@ -29,18 +28,16 @@ namespace CNPM_Tour.Models
         public string MatKhau { get; set; }
         public string Email { get; set; }
         public string SDT { get; set; }
-        public string LoaiKH { get; set; }
         public string SDT2 { get; set; }
         public string SDT3 { get; set; }
         public string Email2 { get; set; }
         public string Email3 { get; set; }
         public string MaLKH { get; set; }
     
-        public virtual LoaiKH LoaiKH1 { get; set; }
+        public virtual LoaiKH LoaiKH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuDC> PhieuDCs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserPoint> UserPoints { get; set; }
+        public virtual UserPoint UserPoint { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Coupon> Coupons { get; set; }
     }

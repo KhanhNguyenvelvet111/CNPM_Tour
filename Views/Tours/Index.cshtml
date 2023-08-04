@@ -3,6 +3,8 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
+    ViewBag.Name = "Quản lý Tour";
+    ViewBag.qlt = "active";
 }
 
 <h2>Index</h2>
@@ -25,15 +27,14 @@
             @Html.DisplayNameFor(model => model.TTVC)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.State)
+            @Html.DisplayNameFor(model => model.forsale)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BannerPic)
+            @Html.DisplayNameFor(model => model.BannerUrl)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Partner.TenDT)
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -51,10 +52,10 @@
             @Html.DisplayFor(modelItem => item.TTVC)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.State)
+            @Html.DisplayFor(modelItem => item.forsale)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.BannerPic)
+            @Html.DisplayFor(modelItem => item.BannerUrl)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Partner.TenDT)

@@ -15,6 +15,10 @@ namespace CNPM_Tour.Models
     public partial class PhieuDC
     {
         public string MaDC { get; set; }
+        public string MaKH { get; set; }
+        public string MaPT { get; set; }
+        public string MaPTTT { get; set; }
+        public System.DateTime NgayDatCho { get; set; }
         public System.DateTime Ngaythamquan { get; set; }
         public string TenKH { get; set; }
         public string SDTKH { get; set; }
@@ -22,13 +26,8 @@ namespace CNPM_Tour.Models
         public string YCThem { get; set; }
         public string PickUp { get; set; }
         public int Invoice { get; set; }
-        public int Paid { get; set; }
-        public int SLAdult { get; set; }
-        public int SLChild { get; set; }
-        public System.DateTime NgayDatCho { get; set; }
-        public string MaKH { get; set; }
-        public string MaPT { get; set; }
-        public string MaPTTT { get; set; }
+        public Nullable<int> SLAdult { get; set; }
+        public Nullable<int> SLChild { get; set; }
     
         public virtual KhachHang KhachHang { get; set; }
         public virtual PacketTour PacketTour { get; set; }

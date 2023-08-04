@@ -14,10 +14,10 @@ namespace CNPM_Tour.Models
     
     public partial class NgayBan
     {
+        public string MaPT { get; set; }
         public Nullable<int> SLVeBan { get; set; }
         public Nullable<System.DateTime> NgayBD { get; set; }
         public Nullable<System.DateTime> NgayKT { get; set; }
-        public string MaPT { get; set; }
     
         public virtual PacketTour PacketTour { get; set; }
     }

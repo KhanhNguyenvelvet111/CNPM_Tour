@@ -29,17 +29,16 @@ namespace CNPM_Tour.Models
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<LoaiKH> LoaiKHs { get; set; }
         public virtual DbSet<LT_Tour> LT_Tour { get; set; }
+        public virtual DbSet<NgayBan> NgayBans { get; set; }
         public virtual DbSet<NgonNgu> NgonNgus { get; set; }
         public virtual DbSet<NhanVien> NhanViens { get; set; }
         public virtual DbSet<PacketTour> PacketTours { get; set; }
         public virtual DbSet<Partner> Partners { get; set; }
         public virtual DbSet<PhieuDC> PhieuDCs { get; set; }
         public virtual DbSet<PhuongThucThanhToan> PhuongThucThanhToans { get; set; }
+        public virtual DbSet<Picture> Pictures { get; set; }
         public virtual DbSet<TKTT> TKTTs { get; set; }
         public virtual DbSet<Tour> Tours { get; set; }
-        public virtual DbSet<CT_LTTour> CT_LTTour { get; set; }
-        public virtual DbSet<NgayBan> NgayBans { get; set; }
-        public virtual DbSet<Picture> Pictures { get; set; }
         public virtual DbSet<UserPoint> UserPoints { get; set; }
     }
 }

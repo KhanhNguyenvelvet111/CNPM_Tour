@@ -14,11 +14,11 @@ namespace CNPM_Tour.Models
     
     public partial class UserPoint
     {
+        public string MaKH { get; set; }
         public Nullable<int> SLXu { get; set; }
-        public int State { get; set; }
         public Nullable<System.DateTime> ActiDate { get; set; }
         public Nullable<System.DateTime> ExpDate { get; set; }
-        public string MaKH { get; set; }
+        public int expState { get; set; }
     
         public virtual KhachHang KhachHang { get; set; }
     }

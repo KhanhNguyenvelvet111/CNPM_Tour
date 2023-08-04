@@ -14,18 +14,10 @@ namespace CNPM_Tour.Models
     
     public partial class TKTT
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TKTT()
-        {
-            this.PacketTours = new HashSet<PacketTour>();
-        }
-    
         public string STK_NH { get; set; }
         public string TenNH { get; set; }
         public string MaDT { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PacketTour> PacketTours { get; set; }
         public virtual Partner Partner { get; set; }
     }
 }

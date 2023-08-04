@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<CNPM_Tour.Models.Tour>
 @{
     ViewBag.Title = "QLTour";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
@@ -10,75 +10,99 @@
     @* table 1*@
     <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="#">
+            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="~/Admin/TaoTour">
                 <i class="fas fa-plus"> </i> Thêm Tour
             </a>
-            <a class="btn btn-sm btn-print " type="button" title="In danh sách" href="#">
+            <a class="btn btn-sm btn-print " type="button" title="In danh sách" href="#" onclick="printDiv('printMe')">
                 <i class="fas fa-solid fa-print"> </i>  In danh sách
             </a>
-            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="#">
+            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="~/Admin/QLTour">
                 <i class="fas fa-solid fa-print"> </i>  Làm mới danh sách
             </a>
-            
-            <div class="tile">
-                <h2 class="tile-title">Danh sách Tour</h2>
-                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable"  role="grid" aria-describedby="sampleTable_info">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Mã tour</th>
-                            <th class="text-center">
-                                Tên tour
-                            </th>
-                            <th class="text-center">
-                                Thời gian mở bán
-                            </th>
-                            <th class="text-center">
-                                Giá vé (VND)
-                            </th>
-                            <th class="text-center">
-                                Ghi chú
-                            </th>
-                            <th class="text-center">
-                                Chức năng
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-center">
-                                gdfgdfg
-                            </td>
-                            <td class="text-center">
-                                g dfgd dfg
-                            </td>
-                            <td class="text-center">
-                                dsgf gdf
-                            </td>
-                            <td class="text-center">
-                                dsgf gdf
-                            </td>
-                            <td class="text-center">
-                                dsgf gdf
-                            </td>
-                            <td class="text-center">
-                                <a class="" href="~/Admin/CTTour">Chi tiết</a>
-                                <span> || </span>
-                                <a class="" href="#">Xóa</a>
 
-                                @*<a class="btn btn-cancel" title="Edit" href="#">
-                                <i class="fas fa-edit"></i>
-                            </a>
-                            <a class="btn btn-excel" ata-toggle="tooltip" title="Delete" data-target="#" data-toggle="modal">
-                                <i class="fas fa-trash"></i>
-                            </a>*@
+            <div class="tile" id="printMe">
+                <h2 class="tile-title">Danh sách Tour</h2>
+                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
+
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MaTour)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TenTour)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DiaDiem)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MoTa)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TTVC)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.forsale)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BannerUrl)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Partner.TenDT)
+                        </th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaTour)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenTour)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiaDiem)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MoTa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TTVC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.forsale)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BannerUrl)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Partner.TenDT)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "ChinhSuaTour", new { id = item.MaTour }) |
+                                @Html.ActionLink("Details", "TourDetails", new { id = item.MaTour }) |
+                                @Html.ActionLink("Delete", "XoaTour", new { id = item.MaTour })
                             </td>
                         </tr>
-                    </tbody>
+                    }
                 </table>
                 @*<a class="btn btn-cancel" title="Trở lại" href="~/Tourmanager/QuanLyTour">
-                Trở lại
-            </a>*@
+                        Trở lại
+                    </a>*@
             </div>
         </div>
     </div>
+    <script>
+        //In dữ liệu
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+
+        }
+    </script>
 </body>

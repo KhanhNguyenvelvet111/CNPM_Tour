@@ -1,0 +1,106 @@
+﻿@model IEnumerable<CNPM_Tour.Models.PhieuDC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Layout/_Admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayDatCho)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaythamquan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SDTKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YCThem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickUp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Invoice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SLAdult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SLChild)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KhachHang.TenKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PacketTour.MaTour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhuongThucThanhToan.TenPTTT)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDatCho)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaythamquan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SDTKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YCThem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PickUp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Invoice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLAdult)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLChild)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KhachHang.TenKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PacketTour.MaTour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhuongThucThanhToan.TenPTTT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaDC }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaDC }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaDC })
+        </td>
+    </tr>
+}
+
+</table>

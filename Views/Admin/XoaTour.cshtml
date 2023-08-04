@@ -1,14 +1,15 @@
 ﻿@model CNPM_Tour.Models.Tour
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Delete";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
     ViewBag.Name = "Quản lý Tour";
     ViewBag.qlt = "active";
 }
 
-<h2>Details</h2>
+<h2>Delete</h2>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Tour</h4>
     <hr />
@@ -46,19 +47,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.State)
+            @Html.DisplayNameFor(model => model.forsale)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.State)
+            @Html.DisplayFor(model => model.forsale)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BannerPic)
+            @Html.DisplayNameFor(model => model.BannerUrl)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BannerPic)
+            @Html.DisplayFor(model => model.BannerUrl)
         </dd>
 
         <dt>
@@ -70,8 +71,14 @@
         </dd>
 
     </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "QLTour")
+        </div>
+    }
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaTour }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

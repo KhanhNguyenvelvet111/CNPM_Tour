@@ -12,20 +12,6 @@
           <Property Name="MaCoupon" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Discount" Type="float" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CNPM.dbo.CT_LTTour' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="CT_LTTour">
-          <Key>
-            <PropertyRef Name="Ngay" />
-            <PropertyRef Name="MaTour" />
-          </Key>
-          <Property Name="GioBD" Type="time" Precision="7" />
-          <Property Name="GioKT" Type="time" Precision="7" />
-          <Property Name="HoatDong" Type="varchar" MaxLength="100" />
-          <Property Name="Anh" Type="varchar" MaxLength="100" />
-          <Property Name="Ngay" Type="int" Nullable="false" />
-          <Property Name="MaTour" Type="varchar" MaxLength="10" Nullable="false" />
-        </EntityType>
         <EntityType Name="HoTro">
           <Key>
             <PropertyRef Name="MaNN" />
@@ -39,13 +25,12 @@ warning 6002: The table/view 'CNPM.dbo.CT_LTTour' does not have a primary key de
             <PropertyRef Name="MaKH" />
           </Key>
           <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TenKH" Type="varchar" MaxLength="30" />
+          <Property Name="TenKH" Type="nvarchar" MaxLength="30" />
           <Property Name="GioiTinh" Type="int" />
           <Property Name="NgaySinh" Type="date" />
           <Property Name="MatKhau" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="SDT" Type="char" MaxLength="10" />
-          <Property Name="LoaiKH" Type="char" MaxLength="1" />
           <Property Name="SDT2" Type="char" MaxLength="10" />
           <Property Name="SDT3" Type="char" MaxLength="10" />
           <Property Name="Email2" Type="varchar" MaxLength="100" />
@@ -57,26 +42,29 @@ warning 6002: The table/view 'CNPM.dbo.CT_LTTour' does not have a primary key de
             <PropertyRef Name="MaLKH" />
           </Key>
           <Property Name="MaLKH" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="LoaiKH" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LoaiKH" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="LT_Tour">
           <Key>
+            <PropertyRef Name="ID_HD" />
             <PropertyRef Name="Ngay" />
             <PropertyRef Name="MaTour" />
           </Key>
+          <Property Name="ID_HD" Type="int" Nullable="false" />
           <Property Name="Ngay" Type="int" Nullable="false" />
           <Property Name="MaTour" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="GioBD" Type="time" Precision="7" />
+          <Property Name="GioKT" Type="time" Precision="7" />
+          <Property Name="HoatDong" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CNPM.dbo.NgayBan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="NgayBan">
           <Key>
             <PropertyRef Name="MaPT" />
           </Key>
+          <Property Name="MaPT" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="SLVeBan" Type="int" />
           <Property Name="NgayBD" Type="date" />
           <Property Name="NgayKT" Type="date" />
-          <Property Name="MaPT" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="NgonNgu">
           <Key>
@@ -90,76 +78,73 @@ warning 6002: The table/view 'CNPM.dbo.NgayBan' does not have a primary key defi
             <PropertyRef Name="MaNV" />
           </Key>
           <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TenNV" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="ChucVu" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenNV" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ChucVu" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="PacketTour">
           <Key>
             <PropertyRef Name="MaPT" />
           </Key>
           <Property Name="MaPT" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TenPT" Type="varchar" MaxLength="100" />
+          <Property Name="MaTour" Type="varchar" MaxLength="10" />
+          <Property Name="STK_NH" Type="varchar" MaxLength="50" />
+          <Property Name="TenPT" Type="nvarchar" MaxLength="100" />
           <Property Name="Duration" Type="int" />
           <Property Name="SLVoucher" Type="int" Nullable="false" />
           <Property Name="Preserve" Type="bit" Nullable="false" />
           <Property Name="PreserveDays" Type="int" />
-          <Property Name="DKDK" Type="varchar(max)" />
+          <Property Name="DKDK" Type="nvarchar(max)" />
           <Property Name="DoiLich" Type="bit" Nullable="false" />
-          <Property Name="CSDoiLich" Type="varchar(max)" />
+          <Property Name="CSDoiLich" Type="nvarchar(max)" />
           <Property Name="GiaGoc_A" Type="int" />
           <Property Name="GiaTraveloka_A" Type="int" />
           <Property Name="GiaGoc_C" Type="int" />
           <Property Name="GiaTraveloka_C" Type="int" />
-          <Property Name="MaTour" Type="varchar" MaxLength="10" />
-          <Property Name="STK_NH" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Partner">
           <Key>
             <PropertyRef Name="MaDT" />
           </Key>
           <Property Name="MaDT" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TenDT" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TenDT" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="MaQG" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="SDT" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="DiaChi" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Website" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="PhieuDC">
           <Key>
             <PropertyRef Name="MaDC" />
           </Key>
           <Property Name="MaDC" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Ngaythamquan" Type="date" Nullable="false" />
-          <Property Name="TenKH" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SDTKH" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="EmailKH" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="YCThem" Type="varchar(max)" Nullable="false" />
-          <Property Name="PickUp" Type="varchar(max)" Nullable="false" />
-          <Property Name="Invoice" Type="int" Nullable="false" />
-          <Property Name="Paid" Type="int" Nullable="false" />
-          <Property Name="SLAdult" Type="int" Nullable="false" />
-          <Property Name="SLChild" Type="int" Nullable="false" />
-          <Property Name="NgayDatCho" Type="date" Nullable="false" />
           <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="MaPT" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="MaPTTT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NgayDatCho" Type="date" Nullable="false" />
+          <Property Name="Ngaythamquan" Type="date" Nullable="false" />
+          <Property Name="TenKH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SDTKH" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="EmailKH" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="YCThem" Type="nvarchar(max)" />
+          <Property Name="PickUp" Type="nvarchar(max)" />
+          <Property Name="Invoice" Type="int" Nullable="false" />
+          <Property Name="SLAdult" Type="int" />
+          <Property Name="SLChild" Type="int" />
         </EntityType>
         <EntityType Name="PhuongThucThanhToan">
           <Key>
             <PropertyRef Name="MaPTTT" />
           </Key>
           <Property Name="MaPTTT" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TenPTTT" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TenPTTT" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CNPM.dbo.Picture' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Picture">
           <Key>
-            <PropertyRef Name="URL" />
+            <PropertyRef Name="ImgURL" />
           </Key>
-          <Property Name="URL" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="MaTour" Type="varchar" MaxLength="10" />
+          <Property Name="ImgURL" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="SoHuu">
           <Key>
@@ -174,7 +159,7 @@ warning 6002: The table/view 'CNPM.dbo.Picture' does not have a primary key defi
             <PropertyRef Name="STK_NH" />
           </Key>
           <Property Name="STK_NH" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TenNH" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenNH" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MaDT" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Tour">
@@ -182,42 +167,25 @@ warning 6002: The table/view 'CNPM.dbo.Picture' does not have a primary key defi
             <PropertyRef Name="MaTour" />
           </Key>
           <Property Name="MaTour" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="TenTour" Type="varchar" MaxLength="100" />
-          <Property Name="DiaDiem" Type="varchar" MaxLength="100" />
-          <Property Name="MoTa" Type="varchar(max)" />
-          <Property Name="TTVC" Type="varchar(max)" />
-          <Property Name="State" Type="int" />
-          <Property Name="BannerPic" Type="varchar" MaxLength="100" />
+          <Property Name="TenTour" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiaDiem" Type="nvarchar" MaxLength="100" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="TTVC" Type="nvarchar(max)" />
+          <Property Name="forsale" Type="bit" />
+          <Property Name="BannerUrl" Type="varchar" MaxLength="100" />
           <Property Name="MaDT" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="UserPoints">
           <Key>
-            <PropertyRef Name="State" />
             <PropertyRef Name="MaKH" />
           </Key>
+          <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="SLXu" Type="int" />
-          <Property Name="State" Type="int" Nullable="false" />
           <Property Name="ActiDate" Type="date" />
           <Property Name="ExpDate" Type="date" />
-          <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="expState" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__CT_LTTour__30F848ED">
-          <End Role="LT_Tour" Type="Self.LT_Tour" Multiplicity="1" />
-          <End Role="CT_LTTour" Type="Self.CT_LTTour" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="LT_Tour">
-              <PropertyRef Name="Ngay" />
-              <PropertyRef Name="MaTour" />
-            </Principal>
-            <Dependent Role="CT_LTTour">
-              <PropertyRef Name="Ngay" />
-              <PropertyRef Name="MaTour" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__HoTro__MaNN__3A81B327">
+        <Association Name="FK__HoTro__MaNN__398D8EEE">
           <End Role="NgonNgu" Type="Self.NgonNgu" Multiplicity="1" />
           <End Role="HoTro" Type="Self.HoTro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -229,7 +197,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__HoTro__MaTour__3B75D760">
+        <Association Name="FK__HoTro__MaTour__3A81B327">
           <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
           <End Role="HoTro" Type="Self.HoTro" Multiplicity="*" />
           <ReferentialConstraint>
@@ -241,7 +209,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__KhachHang__MaLKH__403A8C7D">
+        <Association Name="FK__KhachHang__MaLKH__3F466844">
           <End Role="LoaiKH" Type="Self.LoaiKH" Multiplicity="1" />
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -277,7 +245,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PacketTou__MaTou__4316F928">
+        <Association Name="FK__PacketTou__MaTou__4222D4EF">
           <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
           <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="*" />
           <ReferentialConstraint>
@@ -289,19 +257,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PacketTou__STK_N__440B1D61">
-          <End Role="TKTT" Type="Self.TKTT" Multiplicity="0..1" />
-          <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TKTT">
-              <PropertyRef Name="STK_NH" />
-            </Principal>
-            <Dependent Role="PacketTour">
-              <PropertyRef Name="STK_NH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__PhieuDC__MaKH__46E78A0C">
+        <Association Name="FK__PhieuDC__MaKH__44FF419A">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
           <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
           <ReferentialConstraint>
@@ -313,7 +269,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PhieuDC__MaPT__47DBAE45">
+        <Association Name="FK__PhieuDC__MaPT__45F365D3">
           <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="1" />
           <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
           <ReferentialConstraint>
@@ -325,7 +281,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PhieuDC__MaPTTT__48CFD27E">
+        <Association Name="FK__PhieuDC__MaPTTT__46E78A0C">
           <End Role="PhuongThucThanhToan" Type="Self.PhuongThucThanhToan" Multiplicity="1" />
           <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
           <ReferentialConstraint>
@@ -337,7 +293,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Picture__MaTour__2D27B809">
+        <Association Name="FK__Picture__MaTour__2E1BDC42">
           <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
           <End Role="Picture" Type="Self.Picture" Multiplicity="*" />
           <ReferentialConstraint>
@@ -373,7 +329,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TKTT__MaDT__37A5467C">
+        <Association Name="FK__TKTT__MaDT__36B12243">
           <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
           <End Role="TKTT" Type="Self.TKTT" Multiplicity="*" />
           <ReferentialConstraint>
@@ -397,9 +353,9 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UserPoints__MaKH__4AB81AF0">
+        <Association Name="FK__UserPoints__MaKH__49C3F6B7">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
-          <End Role="UserPoints" Type="Self.UserPoints" Multiplicity="*" />
+          <End Role="UserPoints" Type="Self.UserPoints" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="KhachHang">
               <PropertyRef Name="MaKH" />
@@ -415,61 +371,27 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
           <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LoaiKH" EntityType="Self.LoaiKH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LT_Tour" EntityType="Self.LT_Tour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgayBan" EntityType="Self.NgayBan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgonNgu" EntityType="Self.NgonNgu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PacketTour" EntityType="Self.PacketTour" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Partner" EntityType="Self.Partner" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhieuDC" EntityType="Self.PhieuDC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhuongThucThanhToan" EntityType="Self.PhuongThucThanhToan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SoHuu" EntityType="Self.SoHuu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TKTT" EntityType="Self.TKTT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tour" EntityType="Self.Tour" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CT_LTTour" EntityType="Self.CT_LTTour" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [CT_LTTour].[GioBD] AS [GioBD], 
-    [CT_LTTour].[GioKT] AS [GioKT], 
-    [CT_LTTour].[HoatDong] AS [HoatDong], 
-    [CT_LTTour].[Anh] AS [Anh], 
-    [CT_LTTour].[Ngay] AS [Ngay], 
-    [CT_LTTour].[MaTour] AS [MaTour]
-    FROM [dbo].[CT_LTTour] AS [CT_LTTour]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="NgayBan" EntityType="Self.NgayBan" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [NgayBan].[SLVeBan] AS [SLVeBan], 
-    [NgayBan].[NgayBD] AS [NgayBD], 
-    [NgayBan].[NgayKT] AS [NgayKT], 
-    [NgayBan].[MaPT] AS [MaPT]
-    FROM [dbo].[NgayBan] AS [NgayBan]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Picture" EntityType="Self.Picture" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Picture].[URL] AS [URL], 
-    [Picture].[MaTour] AS [MaTour]
-    FROM [dbo].[Picture] AS [Picture]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="UserPoints" EntityType="Self.UserPoints" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [UserPoints].[SLXu] AS [SLXu], 
-    [UserPoints].[State] AS [State], 
-    [UserPoints].[ActiDate] AS [ActiDate], 
-    [UserPoints].[ExpDate] AS [ExpDate], 
-    [UserPoints].[MaKH] AS [MaKH]
-    FROM [dbo].[UserPoints] AS [UserPoints]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK__CT_LTTour__30F848ED" Association="Self.FK__CT_LTTour__30F848ED">
-            <End Role="LT_Tour" EntitySet="LT_Tour" />
-            <End Role="CT_LTTour" EntitySet="CT_LTTour" />
-          </AssociationSet>
-          <AssociationSet Name="FK__HoTro__MaNN__3A81B327" Association="Self.FK__HoTro__MaNN__3A81B327">
+          <EntitySet Name="UserPoints" EntityType="Self.UserPoints" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__HoTro__MaNN__398D8EEE" Association="Self.FK__HoTro__MaNN__398D8EEE">
             <End Role="NgonNgu" EntitySet="NgonNgu" />
             <End Role="HoTro" EntitySet="HoTro" />
           </AssociationSet>
-          <AssociationSet Name="FK__HoTro__MaTour__3B75D760" Association="Self.FK__HoTro__MaTour__3B75D760">
+          <AssociationSet Name="FK__HoTro__MaTour__3A81B327" Association="Self.FK__HoTro__MaTour__3A81B327">
             <End Role="Tour" EntitySet="Tour" />
             <End Role="HoTro" EntitySet="HoTro" />
           </AssociationSet>
-          <AssociationSet Name="FK__KhachHang__MaLKH__403A8C7D" Association="Self.FK__KhachHang__MaLKH__403A8C7D">
+          <AssociationSet Name="FK__KhachHang__MaLKH__3F466844" Association="Self.FK__KhachHang__MaLKH__3F466844">
             <End Role="LoaiKH" EntitySet="LoaiKH" />
             <End Role="KhachHang" EntitySet="KhachHang" />
           </AssociationSet>
@@ -481,27 +403,23 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <End Role="PacketTour" EntitySet="PacketTour" />
             <End Role="NgayBan" EntitySet="NgayBan" />
           </AssociationSet>
-          <AssociationSet Name="FK__PacketTou__MaTou__4316F928" Association="Self.FK__PacketTou__MaTou__4316F928">
+          <AssociationSet Name="FK__PacketTou__MaTou__4222D4EF" Association="Self.FK__PacketTou__MaTou__4222D4EF">
             <End Role="Tour" EntitySet="Tour" />
             <End Role="PacketTour" EntitySet="PacketTour" />
           </AssociationSet>
-          <AssociationSet Name="FK__PacketTou__STK_N__440B1D61" Association="Self.FK__PacketTou__STK_N__440B1D61">
-            <End Role="TKTT" EntitySet="TKTT" />
-            <End Role="PacketTour" EntitySet="PacketTour" />
-          </AssociationSet>
-          <AssociationSet Name="FK__PhieuDC__MaKH__46E78A0C" Association="Self.FK__PhieuDC__MaKH__46E78A0C">
+          <AssociationSet Name="FK__PhieuDC__MaKH__44FF419A" Association="Self.FK__PhieuDC__MaKH__44FF419A">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="PhieuDC" EntitySet="PhieuDC" />
           </AssociationSet>
-          <AssociationSet Name="FK__PhieuDC__MaPT__47DBAE45" Association="Self.FK__PhieuDC__MaPT__47DBAE45">
+          <AssociationSet Name="FK__PhieuDC__MaPT__45F365D3" Association="Self.FK__PhieuDC__MaPT__45F365D3">
             <End Role="PacketTour" EntitySet="PacketTour" />
             <End Role="PhieuDC" EntitySet="PhieuDC" />
           </AssociationSet>
-          <AssociationSet Name="FK__PhieuDC__MaPTTT__48CFD27E" Association="Self.FK__PhieuDC__MaPTTT__48CFD27E">
+          <AssociationSet Name="FK__PhieuDC__MaPTTT__46E78A0C" Association="Self.FK__PhieuDC__MaPTTT__46E78A0C">
             <End Role="PhuongThucThanhToan" EntitySet="PhuongThucThanhToan" />
             <End Role="PhieuDC" EntitySet="PhieuDC" />
           </AssociationSet>
-          <AssociationSet Name="FK__Picture__MaTour__2D27B809" Association="Self.FK__Picture__MaTour__2D27B809">
+          <AssociationSet Name="FK__Picture__MaTour__2E1BDC42" Association="Self.FK__Picture__MaTour__2E1BDC42">
             <End Role="Tour" EntitySet="Tour" />
             <End Role="Picture" EntitySet="Picture" />
           </AssociationSet>
@@ -513,7 +431,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="SoHuu" EntitySet="SoHuu" />
           </AssociationSet>
-          <AssociationSet Name="FK__TKTT__MaDT__37A5467C" Association="Self.FK__TKTT__MaDT__37A5467C">
+          <AssociationSet Name="FK__TKTT__MaDT__36B12243" Association="Self.FK__TKTT__MaDT__36B12243">
             <End Role="Partner" EntitySet="Partner" />
             <End Role="TKTT" EntitySet="TKTT" />
           </AssociationSet>
@@ -521,7 +439,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <End Role="Partner" EntitySet="Partner" />
             <End Role="Tour" EntitySet="Tour" />
           </AssociationSet>
-          <AssociationSet Name="FK__UserPoints__MaKH__4AB81AF0" Association="Self.FK__UserPoints__MaKH__4AB81AF0">
+          <AssociationSet Name="FK__UserPoints__MaKH__49C3F6B7" Association="Self.FK__UserPoints__MaKH__49C3F6B7">
             <End Role="KhachHang" EntitySet="KhachHang" />
             <End Role="UserPoints" EntitySet="UserPoints" />
           </AssociationSet>
@@ -544,21 +462,20 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <PropertyRef Name="MaKH" />
           </Key>
           <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenKH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TenKH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="GioiTinh" Type="Int32" />
           <Property Name="NgaySinh" Type="DateTime" Precision="0" />
           <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="LoaiKH" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="SDT2" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="SDT3" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="Email2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Email3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MaLKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="LoaiKH1" Relationship="Self.FK__KhachHang__MaLKH__403A8C7D" FromRole="KhachHang" ToRole="LoaiKH" />
-          <NavigationProperty Name="PhieuDCs" Relationship="Self.FK__PhieuDC__MaKH__46E78A0C" FromRole="KhachHang" ToRole="PhieuDC" />
-          <NavigationProperty Name="UserPoints" Relationship="Self.FK__UserPoints__MaKH__4AB81AF0" FromRole="KhachHang" ToRole="UserPoints" />
+          <NavigationProperty Name="LoaiKH" Relationship="Self.FK__KhachHang__MaLKH__3F466844" FromRole="KhachHang" ToRole="LoaiKH" />
+          <NavigationProperty Name="PhieuDCs" Relationship="Self.FK__PhieuDC__MaKH__44FF419A" FromRole="KhachHang" ToRole="PhieuDC" />
+          <NavigationProperty Name="UserPoint" Relationship="Self.FK__UserPoints__MaKH__49C3F6B7" FromRole="KhachHang" ToRole="UserPoints" />
           <NavigationProperty Name="Coupons" Relationship="Self.SoHuu" FromRole="KhachHang" ToRole="Coupon" />
         </EntityType>
         <EntityType Name="LoaiKH">
@@ -566,18 +483,32 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <PropertyRef Name="MaLKH" />
           </Key>
           <Property Name="MaLKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LoaiKH1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="KhachHangs" Relationship="Self.FK__KhachHang__MaLKH__403A8C7D" FromRole="LoaiKH" ToRole="KhachHang" />
+          <Property Name="LoaiKH1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="KhachHangs" Relationship="Self.FK__KhachHang__MaLKH__3F466844" FromRole="LoaiKH" ToRole="KhachHang" />
         </EntityType>
         <EntityType Name="LT_Tour">
           <Key>
+            <PropertyRef Name="ID_HD" />
             <PropertyRef Name="Ngay" />
             <PropertyRef Name="MaTour" />
           </Key>
+          <Property Name="ID_HD" Type="Int32" Nullable="false" />
           <Property Name="Ngay" Type="Int32" Nullable="false" />
           <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CT_LTTour" Relationship="Self.FK__CT_LTTour__30F848ED" FromRole="LT_Tour" ToRole="CT_LTTour" />
+          <Property Name="GioBD" Type="Time" Precision="7" />
+          <Property Name="GioKT" Type="Time" Precision="7" />
+          <Property Name="HoatDong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Tour" Relationship="Self.FK__LT_Tour__MaTour__2B3F6F97" FromRole="LT_Tour" ToRole="Tour" />
+        </EntityType>
+        <EntityType Name="NgayBan">
+          <Key>
+            <PropertyRef Name="MaPT" />
+          </Key>
+          <Property Name="MaPT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SLVeBan" Type="Int32" />
+          <Property Name="NgayBD" Type="DateTime" Precision="0" />
+          <Property Name="NgayKT" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="PacketTour" Relationship="Self.FK__NgayBan__MaPT__4CA06362" FromRole="NgayBan" ToRole="PacketTour" />
         </EntityType>
         <EntityType Name="NgonNgu">
           <Key>
@@ -592,45 +523,44 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <PropertyRef Name="MaNV" />
           </Key>
           <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="PacketTour">
           <Key>
             <PropertyRef Name="MaPT" />
           </Key>
           <Property Name="MaPT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenPT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="STK_NH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenPT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Duration" Type="Int32" />
           <Property Name="SLVoucher" Type="Int32" Nullable="false" />
           <Property Name="Preserve" Type="Boolean" Nullable="false" />
           <Property Name="PreserveDays" Type="Int32" />
-          <Property Name="DKDK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DKDK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DoiLich" Type="Boolean" Nullable="false" />
-          <Property Name="CSDoiLich" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CSDoiLich" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="GiaGoc_A" Type="Int32" />
           <Property Name="GiaTraveloka_A" Type="Int32" />
           <Property Name="GiaGoc_C" Type="Int32" />
           <Property Name="GiaTraveloka_C" Type="Int32" />
-          <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="STK_NH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="NgayBan" Relationship="Self.FK__NgayBan__MaPT__4CA06362" FromRole="PacketTour" ToRole="NgayBan" />
-          <NavigationProperty Name="Tour" Relationship="Self.FK__PacketTou__MaTou__4316F928" FromRole="PacketTour" ToRole="Tour" />
-          <NavigationProperty Name="TKTT" Relationship="Self.FK__PacketTou__STK_N__440B1D61" FromRole="PacketTour" ToRole="TKTT" />
-          <NavigationProperty Name="PhieuDCs" Relationship="Self.FK__PhieuDC__MaPT__47DBAE45" FromRole="PacketTour" ToRole="PhieuDC" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK__PacketTou__MaTou__4222D4EF" FromRole="PacketTour" ToRole="Tour" />
+          <NavigationProperty Name="PhieuDCs" Relationship="Self.FK__PhieuDC__MaPT__45F365D3" FromRole="PacketTour" ToRole="PhieuDC" />
         </EntityType>
         <EntityType Name="Partner">
           <Key>
             <PropertyRef Name="MaDT" />
           </Key>
           <Property Name="MaDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenDT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenDT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaQG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="TKTTs" Relationship="Self.FK__TKTT__MaDT__37A5467C" FromRole="Partner" ToRole="TKTT" />
+          <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TKTTs" Relationship="Self.FK__TKTT__MaDT__36B12243" FromRole="Partner" ToRole="TKTT" />
           <NavigationProperty Name="Tours" Relationship="Self.FK__Tour__MaDT__286302EC" FromRole="Partner" ToRole="Tour" />
         </EntityType>
         <EntityType Name="PhieuDC">
@@ -638,104 +568,78 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <PropertyRef Name="MaDC" />
           </Key>
           <Property Name="MaDC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Ngaythamquan" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SDTKH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="EmailKH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="YCThem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PickUp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Invoice" Type="Int32" Nullable="false" />
-          <Property Name="Paid" Type="Int32" Nullable="false" />
-          <Property Name="SLAdult" Type="Int32" Nullable="false" />
-          <Property Name="SLChild" Type="Int32" Nullable="false" />
-          <Property Name="NgayDatCho" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaPT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaPTTT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="KhachHang" Relationship="Self.FK__PhieuDC__MaKH__46E78A0C" FromRole="PhieuDC" ToRole="KhachHang" />
-          <NavigationProperty Name="PacketTour" Relationship="Self.FK__PhieuDC__MaPT__47DBAE45" FromRole="PhieuDC" ToRole="PacketTour" />
-          <NavigationProperty Name="PhuongThucThanhToan" Relationship="Self.FK__PhieuDC__MaPTTT__48CFD27E" FromRole="PhieuDC" ToRole="PhuongThucThanhToan" />
+          <Property Name="NgayDatCho" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Ngaythamquan" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SDTKH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="EmailKH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="YCThem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PickUp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice" Type="Int32" Nullable="false" />
+          <Property Name="SLAdult" Type="Int32" />
+          <Property Name="SLChild" Type="Int32" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK__PhieuDC__MaKH__44FF419A" FromRole="PhieuDC" ToRole="KhachHang" />
+          <NavigationProperty Name="PacketTour" Relationship="Self.FK__PhieuDC__MaPT__45F365D3" FromRole="PhieuDC" ToRole="PacketTour" />
+          <NavigationProperty Name="PhuongThucThanhToan" Relationship="Self.FK__PhieuDC__MaPTTT__46E78A0C" FromRole="PhieuDC" ToRole="PhuongThucThanhToan" />
         </EntityType>
         <EntityType Name="PhuongThucThanhToan">
           <Key>
             <PropertyRef Name="MaPTTT" />
           </Key>
           <Property Name="MaPTTT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenPTTT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="PhieuDCs" Relationship="Self.FK__PhieuDC__MaPTTT__48CFD27E" FromRole="PhuongThucThanhToan" ToRole="PhieuDC" />
+          <Property Name="TenPTTT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PhieuDCs" Relationship="Self.FK__PhieuDC__MaPTTT__46E78A0C" FromRole="PhuongThucThanhToan" ToRole="PhieuDC" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="ImgURL" />
+          </Key>
+          <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ImgURL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK__Picture__MaTour__2E1BDC42" FromRole="Picture" ToRole="Tour" />
         </EntityType>
         <EntityType Name="TKTT">
           <Key>
             <PropertyRef Name="STK_NH" />
           </Key>
           <Property Name="STK_NH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenNH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="PacketTours" Relationship="Self.FK__PacketTou__STK_N__440B1D61" FromRole="TKTT" ToRole="PacketTour" />
-          <NavigationProperty Name="Partner" Relationship="Self.FK__TKTT__MaDT__37A5467C" FromRole="TKTT" ToRole="Partner" />
+          <NavigationProperty Name="Partner" Relationship="Self.FK__TKTT__MaDT__36B12243" FromRole="TKTT" ToRole="Partner" />
         </EntityType>
         <EntityType Name="Tour">
           <Key>
             <PropertyRef Name="MaTour" />
           </Key>
           <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TenTour" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="DiaDiem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="TTVC" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="State" Type="Int32" />
-          <Property Name="BannerPic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TenTour" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DiaDiem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TTVC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="forsale" Type="Boolean" />
+          <Property Name="BannerUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="MaDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="LT_Tour" Relationship="Self.FK__LT_Tour__MaTour__2B3F6F97" FromRole="Tour" ToRole="LT_Tour" />
-          <NavigationProperty Name="PacketTours" Relationship="Self.FK__PacketTou__MaTou__4316F928" FromRole="Tour" ToRole="PacketTour" />
+          <NavigationProperty Name="PacketTours" Relationship="Self.FK__PacketTou__MaTou__4222D4EF" FromRole="Tour" ToRole="PacketTour" />
           <NavigationProperty Name="Partner" Relationship="Self.FK__Tour__MaDT__286302EC" FromRole="Tour" ToRole="Partner" />
-          <NavigationProperty Name="Pictures" Relationship="Self.FK__Picture__MaTour__2D27B809" FromRole="Tour" ToRole="Picture" />
+          <NavigationProperty Name="Pictures" Relationship="Self.FK__Picture__MaTour__2E1BDC42" FromRole="Tour" ToRole="Picture" />
           <NavigationProperty Name="NgonNgus" Relationship="Self.HoTro" FromRole="Tour" ToRole="NgonNgu" />
-        </EntityType>
-        <EntityType Name="CT_LTTour">
-          <Key>
-            <PropertyRef Name="Ngay" />
-            <PropertyRef Name="MaTour" />
-          </Key>
-          <Property Name="GioBD" Type="Time" Precision="7" />
-          <Property Name="GioKT" Type="Time" Precision="7" />
-          <Property Name="HoatDong" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Anh" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Ngay" Type="Int32" Nullable="false" />
-          <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="LT_Tour" Relationship="Self.FK__CT_LTTour__30F848ED" FromRole="CT_LTTour" ToRole="LT_Tour" />
-        </EntityType>
-        <EntityType Name="NgayBan">
-          <Key>
-            <PropertyRef Name="MaPT" />
-          </Key>
-          <Property Name="SLVeBan" Type="Int32" />
-          <Property Name="NgayBD" Type="DateTime" Precision="0" />
-          <Property Name="NgayKT" Type="DateTime" Precision="0" />
-          <Property Name="MaPT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="PacketTour" Relationship="Self.FK__NgayBan__MaPT__4CA06362" FromRole="NgayBan" ToRole="PacketTour" />
-        </EntityType>
-        <EntityType Name="Picture">
-          <Key>
-            <PropertyRef Name="URL" />
-          </Key>
-          <Property Name="URL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Tour" Relationship="Self.FK__Picture__MaTour__2D27B809" FromRole="Picture" ToRole="Tour" />
         </EntityType>
         <EntityType Name="UserPoint">
           <Key>
-            <PropertyRef Name="State" />
             <PropertyRef Name="MaKH" />
           </Key>
+          <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SLXu" Type="Int32" />
-          <Property Name="State" Type="Int32" Nullable="false" />
           <Property Name="ActiDate" Type="DateTime" Precision="0" />
           <Property Name="ExpDate" Type="DateTime" Precision="0" />
-          <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="KhachHang" Relationship="Self.FK__UserPoints__MaKH__4AB81AF0" FromRole="UserPoints" ToRole="KhachHang" />
+          <Property Name="expState" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK__UserPoints__MaKH__49C3F6B7" FromRole="UserPoints" ToRole="KhachHang" />
         </EntityType>
-        <Association Name="FK__KhachHang__MaLKH__403A8C7D">
+        <Association Name="FK__KhachHang__MaLKH__3F466844">
           <End Role="LoaiKH" Type="Self.LoaiKH" Multiplicity="1" />
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
           <ReferentialConstraint>
@@ -747,7 +651,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PhieuDC__MaKH__46E78A0C">
+        <Association Name="FK__PhieuDC__MaKH__44FF419A">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
           <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
           <ReferentialConstraint>
@@ -759,29 +663,15 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__UserPoints__MaKH__4AB81AF0">
+        <Association Name="FK__UserPoints__MaKH__49C3F6B7">
           <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
-          <End Role="UserPoints" Type="Self.UserPoint" Multiplicity="*" />
+          <End Role="UserPoints" Type="Self.UserPoint" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="KhachHang">
               <PropertyRef Name="MaKH" />
             </Principal>
             <Dependent Role="UserPoints">
               <PropertyRef Name="MaKH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__CT_LTTour__30F848ED">
-          <End Role="LT_Tour" Type="Self.LT_Tour" Multiplicity="1" />
-          <End Role="CT_LTTour" Type="Self.CT_LTTour" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="LT_Tour">
-              <PropertyRef Name="Ngay" />
-              <PropertyRef Name="MaTour" />
-            </Principal>
-            <Dependent Role="CT_LTTour">
-              <PropertyRef Name="Ngay" />
-              <PropertyRef Name="MaTour" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -809,7 +699,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PacketTou__MaTou__4316F928">
+        <Association Name="FK__PacketTou__MaTou__4222D4EF">
           <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
           <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="*" />
           <ReferentialConstraint>
@@ -821,19 +711,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PacketTou__STK_N__440B1D61">
-          <End Role="TKTT" Type="Self.TKTT" Multiplicity="0..1" />
-          <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TKTT">
-              <PropertyRef Name="STK_NH" />
-            </Principal>
-            <Dependent Role="PacketTour">
-              <PropertyRef Name="STK_NH" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__PhieuDC__MaPT__47DBAE45">
+        <Association Name="FK__PhieuDC__MaPT__45F365D3">
           <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="1" />
           <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
           <ReferentialConstraint>
@@ -845,7 +723,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TKTT__MaDT__37A5467C">
+        <Association Name="FK__TKTT__MaDT__36B12243">
           <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
           <End Role="TKTT" Type="Self.TKTT" Multiplicity="*" />
           <ReferentialConstraint>
@@ -869,7 +747,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PhieuDC__MaPTTT__48CFD27E">
+        <Association Name="FK__PhieuDC__MaPTTT__46E78A0C">
           <End Role="PhuongThucThanhToan" Type="Self.PhuongThucThanhToan" Multiplicity="1" />
           <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
           <ReferentialConstraint>
@@ -881,7 +759,7 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Picture__MaTour__2D27B809">
+        <Association Name="FK__Picture__MaTour__2E1BDC42">
           <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
           <End Role="Picture" Type="Self.Picture" Multiplicity="*" />
           <ReferentialConstraint>
@@ -906,33 +784,28 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
           <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
           <EntitySet Name="LoaiKHs" EntityType="Self.LoaiKH" />
           <EntitySet Name="LT_Tour" EntityType="Self.LT_Tour" />
+          <EntitySet Name="NgayBans" EntityType="Self.NgayBan" />
           <EntitySet Name="NgonNgus" EntityType="Self.NgonNgu" />
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="PacketTours" EntityType="Self.PacketTour" />
           <EntitySet Name="Partners" EntityType="Self.Partner" />
           <EntitySet Name="PhieuDCs" EntityType="Self.PhieuDC" />
           <EntitySet Name="PhuongThucThanhToans" EntityType="Self.PhuongThucThanhToan" />
+          <EntitySet Name="Pictures" EntityType="Self.Picture" />
           <EntitySet Name="TKTTs" EntityType="Self.TKTT" />
           <EntitySet Name="Tours" EntityType="Self.Tour" />
-          <EntitySet Name="CT_LTTour" EntityType="Self.CT_LTTour" />
-          <EntitySet Name="NgayBans" EntityType="Self.NgayBan" />
-          <EntitySet Name="Pictures" EntityType="Self.Picture" />
           <EntitySet Name="UserPoints" EntityType="Self.UserPoint" />
-          <AssociationSet Name="FK__KhachHang__MaLKH__403A8C7D" Association="Self.FK__KhachHang__MaLKH__403A8C7D">
+          <AssociationSet Name="FK__KhachHang__MaLKH__3F466844" Association="Self.FK__KhachHang__MaLKH__3F466844">
             <End Role="LoaiKH" EntitySet="LoaiKHs" />
             <End Role="KhachHang" EntitySet="KhachHangs" />
           </AssociationSet>
-          <AssociationSet Name="FK__PhieuDC__MaKH__46E78A0C" Association="Self.FK__PhieuDC__MaKH__46E78A0C">
+          <AssociationSet Name="FK__PhieuDC__MaKH__44FF419A" Association="Self.FK__PhieuDC__MaKH__44FF419A">
             <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="PhieuDC" EntitySet="PhieuDCs" />
           </AssociationSet>
-          <AssociationSet Name="FK__UserPoints__MaKH__4AB81AF0" Association="Self.FK__UserPoints__MaKH__4AB81AF0">
+          <AssociationSet Name="FK__UserPoints__MaKH__49C3F6B7" Association="Self.FK__UserPoints__MaKH__49C3F6B7">
             <End Role="KhachHang" EntitySet="KhachHangs" />
             <End Role="UserPoints" EntitySet="UserPoints" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CT_LTTour__30F848ED" Association="Self.FK__CT_LTTour__30F848ED">
-            <End Role="LT_Tour" EntitySet="LT_Tour" />
-            <End Role="CT_LTTour" EntitySet="CT_LTTour" />
           </AssociationSet>
           <AssociationSet Name="FK__LT_Tour__MaTour__2B3F6F97" Association="Self.FK__LT_Tour__MaTour__2B3F6F97">
             <End Role="Tour" EntitySet="Tours" />
@@ -942,19 +815,15 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <End Role="PacketTour" EntitySet="PacketTours" />
             <End Role="NgayBan" EntitySet="NgayBans" />
           </AssociationSet>
-          <AssociationSet Name="FK__PacketTou__MaTou__4316F928" Association="Self.FK__PacketTou__MaTou__4316F928">
+          <AssociationSet Name="FK__PacketTou__MaTou__4222D4EF" Association="Self.FK__PacketTou__MaTou__4222D4EF">
             <End Role="Tour" EntitySet="Tours" />
             <End Role="PacketTour" EntitySet="PacketTours" />
           </AssociationSet>
-          <AssociationSet Name="FK__PacketTou__STK_N__440B1D61" Association="Self.FK__PacketTou__STK_N__440B1D61">
-            <End Role="TKTT" EntitySet="TKTTs" />
-            <End Role="PacketTour" EntitySet="PacketTours" />
-          </AssociationSet>
-          <AssociationSet Name="FK__PhieuDC__MaPT__47DBAE45" Association="Self.FK__PhieuDC__MaPT__47DBAE45">
+          <AssociationSet Name="FK__PhieuDC__MaPT__45F365D3" Association="Self.FK__PhieuDC__MaPT__45F365D3">
             <End Role="PacketTour" EntitySet="PacketTours" />
             <End Role="PhieuDC" EntitySet="PhieuDCs" />
           </AssociationSet>
-          <AssociationSet Name="FK__TKTT__MaDT__37A5467C" Association="Self.FK__TKTT__MaDT__37A5467C">
+          <AssociationSet Name="FK__TKTT__MaDT__36B12243" Association="Self.FK__TKTT__MaDT__36B12243">
             <End Role="Partner" EntitySet="Partners" />
             <End Role="TKTT" EntitySet="TKTTs" />
           </AssociationSet>
@@ -962,11 +831,11 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <End Role="Partner" EntitySet="Partners" />
             <End Role="Tour" EntitySet="Tours" />
           </AssociationSet>
-          <AssociationSet Name="FK__PhieuDC__MaPTTT__48CFD27E" Association="Self.FK__PhieuDC__MaPTTT__48CFD27E">
+          <AssociationSet Name="FK__PhieuDC__MaPTTT__46E78A0C" Association="Self.FK__PhieuDC__MaPTTT__46E78A0C">
             <End Role="PhuongThucThanhToan" EntitySet="PhuongThucThanhToans" />
             <End Role="PhieuDC" EntitySet="PhieuDCs" />
           </AssociationSet>
-          <AssociationSet Name="FK__Picture__MaTour__2D27B809" Association="Self.FK__Picture__MaTour__2D27B809">
+          <AssociationSet Name="FK__Picture__MaTour__2E1BDC42" Association="Self.FK__Picture__MaTour__2E1BDC42">
             <End Role="Tour" EntitySet="Tours" />
             <End Role="Picture" EntitySet="Pictures" />
           </AssociationSet>
@@ -1003,7 +872,6 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
                 <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
-                <ScalarProperty Name="LoaiKH" ColumnName="LoaiKH" />
                 <ScalarProperty Name="SDT2" ColumnName="SDT2" />
                 <ScalarProperty Name="SDT3" ColumnName="SDT3" />
                 <ScalarProperty Name="Email2" ColumnName="Email2" />
@@ -1023,8 +891,22 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
           <EntitySetMapping Name="LT_Tour">
             <EntityTypeMapping TypeName="CNPMModel.LT_Tour">
               <MappingFragment StoreEntitySet="LT_Tour">
+                <ScalarProperty Name="ID_HD" ColumnName="ID_HD" />
                 <ScalarProperty Name="Ngay" ColumnName="Ngay" />
                 <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="GioBD" ColumnName="GioBD" />
+                <ScalarProperty Name="GioKT" ColumnName="GioKT" />
+                <ScalarProperty Name="HoatDong" ColumnName="HoatDong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgayBans">
+            <EntityTypeMapping TypeName="CNPMModel.NgayBan">
+              <MappingFragment StoreEntitySet="NgayBan">
+                <ScalarProperty Name="MaPT" ColumnName="MaPT" />
+                <ScalarProperty Name="SLVeBan" ColumnName="SLVeBan" />
+                <ScalarProperty Name="NgayBD" ColumnName="NgayBD" />
+                <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1049,6 +931,8 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <EntityTypeMapping TypeName="CNPMModel.PacketTour">
               <MappingFragment StoreEntitySet="PacketTour">
                 <ScalarProperty Name="MaPT" ColumnName="MaPT" />
+                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="STK_NH" ColumnName="STK_NH" />
                 <ScalarProperty Name="TenPT" ColumnName="TenPT" />
                 <ScalarProperty Name="Duration" ColumnName="Duration" />
                 <ScalarProperty Name="SLVoucher" ColumnName="SLVoucher" />
@@ -1061,8 +945,6 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
                 <ScalarProperty Name="GiaTraveloka_A" ColumnName="GiaTraveloka_A" />
                 <ScalarProperty Name="GiaGoc_C" ColumnName="GiaGoc_C" />
                 <ScalarProperty Name="GiaTraveloka_C" ColumnName="GiaTraveloka_C" />
-                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
-                <ScalarProperty Name="STK_NH" ColumnName="STK_NH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1083,6 +965,10 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
             <EntityTypeMapping TypeName="CNPMModel.PhieuDC">
               <MappingFragment StoreEntitySet="PhieuDC">
                 <ScalarProperty Name="MaDC" ColumnName="MaDC" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="MaPT" ColumnName="MaPT" />
+                <ScalarProperty Name="MaPTTT" ColumnName="MaPTTT" />
+                <ScalarProperty Name="NgayDatCho" ColumnName="NgayDatCho" />
                 <ScalarProperty Name="Ngaythamquan" ColumnName="Ngaythamquan" />
                 <ScalarProperty Name="TenKH" ColumnName="TenKH" />
                 <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
@@ -1090,13 +976,8 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
                 <ScalarProperty Name="YCThem" ColumnName="YCThem" />
                 <ScalarProperty Name="PickUp" ColumnName="PickUp" />
                 <ScalarProperty Name="Invoice" ColumnName="Invoice" />
-                <ScalarProperty Name="Paid" ColumnName="Paid" />
                 <ScalarProperty Name="SLAdult" ColumnName="SLAdult" />
                 <ScalarProperty Name="SLChild" ColumnName="SLChild" />
-                <ScalarProperty Name="NgayDatCho" ColumnName="NgayDatCho" />
-                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-                <ScalarProperty Name="MaPT" ColumnName="MaPT" />
-                <ScalarProperty Name="MaPTTT" ColumnName="MaPTTT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1105,6 +986,14 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
               <MappingFragment StoreEntitySet="PhuongThucThanhToan">
                 <ScalarProperty Name="MaPTTT" ColumnName="MaPTTT" />
                 <ScalarProperty Name="TenPTTT" ColumnName="TenPTTT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="CNPMModel.Picture">
+              <MappingFragment StoreEntitySet="Picture">
+                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="ImgURL" ColumnName="ImgURL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1125,50 +1014,20 @@ warning 6002: The table/view 'CNPM.dbo.UserPoints' does not have a primary key d
                 <ScalarProperty Name="DiaDiem" ColumnName="DiaDiem" />
                 <ScalarProperty Name="MoTa" ColumnName="MoTa" />
                 <ScalarProperty Name="TTVC" ColumnName="TTVC" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="BannerPic" ColumnName="BannerPic" />
+                <ScalarProperty Name="forsale" ColumnName="forsale" />
+                <ScalarProperty Name="BannerUrl" ColumnName="BannerUrl" />
                 <ScalarProperty Name="MaDT" ColumnName="MaDT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CT_LTTour">
-            <EntityTypeMapping TypeName="CNPMModel.CT_LTTour">
-              <MappingFragment StoreEntitySet="CT_LTTour">
-                <ScalarProperty Name="GioBD" ColumnName="GioBD" />
-                <ScalarProperty Name="GioKT" ColumnName="GioKT" />
-                <ScalarProperty Name="HoatDong" ColumnName="HoatDong" />
-                <ScalarProperty Name="Anh" ColumnName="Anh" />
-                <ScalarProperty Name="Ngay" ColumnName="Ngay" />
-                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NgayBans">
-            <EntityTypeMapping TypeName="CNPMModel.NgayBan">
-              <MappingFragment StoreEntitySet="NgayBan">
-                <ScalarProperty Name="SLVeBan" ColumnName="SLVeBan" />
-                <ScalarProperty Name="NgayBD" ColumnName="NgayBD" />
-                <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
-                <ScalarProperty Name="MaPT" ColumnName="MaPT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Pictures">
-            <EntityTypeMapping TypeName="CNPMModel.Picture">
-              <MappingFragment StoreEntitySet="Picture">
-                <ScalarProperty Name="URL" ColumnName="URL" />
-                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserPoints">
             <EntityTypeMapping TypeName="CNPMModel.UserPoint">
               <MappingFragment StoreEntitySet="UserPoints">
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
                 <ScalarProperty Name="SLXu" ColumnName="SLXu" />
-                <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="ActiDate" ColumnName="ActiDate" />
                 <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
-                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="expState" ColumnName="expState" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

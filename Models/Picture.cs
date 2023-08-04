@@ -14,8 +14,8 @@ namespace CNPM_Tour.Models
     
     public partial class Picture
     {
-        public string URL { get; set; }
         public string MaTour { get; set; }
+        public string ImgURL { get; set; }
     
         public virtual Tour Tour { get; set; }
     }

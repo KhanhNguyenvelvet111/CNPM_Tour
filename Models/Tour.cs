@@ -28,8 +28,8 @@ namespace CNPM_Tour.Models
         public string DiaDiem { get; set; }
         public string MoTa { get; set; }
         public string TTVC { get; set; }
-        public Nullable<int> State { get; set; }
-        public string BannerPic { get; set; }
+        public Nullable<bool> forsale { get; set; }
+        public string BannerUrl { get; set; }
         public string MaDT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
