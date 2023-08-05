@@ -23,7 +23,6 @@ namespace CNPM_Tour.Models
     
         public string MaKH { get; set; }
         public string TenKH { get; set; }
-        public Nullable<int> GioiTinh { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string MatKhau { get; set; }
         public string Email { get; set; }
@@ -33,6 +32,7 @@ namespace CNPM_Tour.Models
         public string Email2 { get; set; }
         public string Email3 { get; set; }
         public string MaLKH { get; set; }
+        public Nullable<bool> GioiTinh { get; set; }
     
         public virtual LoaiKH LoaiKH { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

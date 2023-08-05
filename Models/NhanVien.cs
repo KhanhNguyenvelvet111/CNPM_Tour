@@ -17,5 +17,6 @@ namespace CNPM_Tour.Models
         public string MaNV { get; set; }
         public string TenNV { get; set; }
         public string ChucVu { get; set; }
+        public Nullable<bool> TrangThai { get; set; }
     }
 }

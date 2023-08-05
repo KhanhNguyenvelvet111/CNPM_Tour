@@ -1,0 +1,82 @@
+﻿@model CNPM_Tour.Models.Partner
+@{
+    ViewBag.Title = "DoiTacDetails";
+    Layout = "~/Views/Admin/Layout/_Admin.cshtml";
+    ViewBag.Name = "Quản lý Đối tác";
+    ViewBag.qldt = "active";
+}
+<body>
+    <div class="" style="width: 185px; white-space: nowrap; margin: 4px auto; border: 2px solid #000; border-radius: 10px; padding-top: 10px; ">
+        <div class="" style="height: 100%;   display: flex;   justify-content: center;   align-items: center;">
+            <p class="" style="font-size: 24px;  font-weight: bold;">Chi tiết tour</p>
+        </div>
+    </div>
+
+    @* table 1*@
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <form action="/action_page.php">
+                    <table class="table table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" role="grid" aria-describedby="sampleTable_info">
+                        <h2 class="tile-title">Đối tác @Html.DisplayFor(model => Model.MaDT)</h2>
+                        <tr style="display:flex;width:100%">
+                            <td>
+                                <label for="fname">Mã đối tác:</label>
+                                @Html.DisplayFor(model => model.MaDT)
+                                @*<input type="text" id="fname" name="fname" style="border:none ; width:auto">*@
+                            </td>
+                        </tr>
+                        <tr style="display:flex;width:100%">
+                            <td>
+                                <label for="fname">Tên đối tác:</label>
+                                @Html.DisplayFor(model => model.TenDT)
+                                @*<input type="text" id="fname" name="fname" style="border:none ; width:auto">*@
+                            </td>
+                        </tr>
+                        <tr style="display:flex;width:100%">
+                            <td>
+                                <label for="fname">Mã quốc gia:</label>
+                                @Html.DisplayFor(model => model.MaQG)
+                                @*<input type="text" id="fname" name="fname" style="border:none ; width:auto">*@
+                            </td>
+                        </tr>
+                        <tr style="display:flex;width:100%">
+                            <td>
+                                <label for="fname">Số điện thoại:</label>
+                                @Html.DisplayFor(model => model.SDT)
+                                @*<input type="text" id="fname" name="fname" style="border:none ; width:auto">*@
+                            </td>
+                        </tr>
+
+                        <tr style="display:flex;width:100%">
+                            <td>
+                                <label for="fname">Địa chỉ:</label>
+                                @Html.DisplayFor(model => model.DiaChi)
+                                @*<input type="text" id="fname" name="fname" style="border:none ; width:auto">*@
+                            </td>
+                        </tr>
+
+                        <tr style="display:flex;width:100%">
+                            <td>
+                                <label for="fname">Email:</label>
+                                @Html.DisplayFor(model => model.Email)
+                                @*<input type="text" id="fname" name="fname" style="border:none ; width:auto">*@
+                            </td>
+                        </tr>
+                        <tr style="display:flex;width:100%">
+                            <td>
+                                <label for="fname">Website:</label>
+                                @Html.DisplayFor(model => model.Website)
+                                @*<input type="text" id="fname" name="fname" style="border:none ; width:auto">*@
+                            </td>
+                        </tr>
+                    </table>
+                    <div class=" col-12" style="white-space: nowrap; margin: 4px auto; border: 2px solid #000; padding: 10px 10px 10px 10px; font-size: 20px; text-align: center; max-width: fit-content; font-weight: bold; border-radius: 5px; margin-left: inherit;">
+                        @Html.ActionLink("Quay lại", "QLDoiTac")
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+

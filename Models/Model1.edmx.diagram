@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5167d1baf6e14f5fb5c0c29b26ff799d" Name="Diagram1">
+      <Diagram DiagramId="eaeb7b9322c44d3d9b34de83572e5ff1" Name="Diagram1">
         <EntityTypeShape EntityType="CNPMModel.Coupon" Width="1.5" PointX="9" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="CNPMModel.KhachHang" Width="1.5" PointX="11.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CNPMModel.LoaiKH" Width="1.5" PointX="9" PointY="16.5" IsExpanded="true" />

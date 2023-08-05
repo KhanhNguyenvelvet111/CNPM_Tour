@@ -129,7 +129,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CouponsController.cs" />
     <Compile Include="Controllers\KhachHangsController.cs" />
+    <Compile Include="Controllers\LoaiKHsController.cs" />
     <Compile Include="Controllers\NhanViensController.cs" />
     <Compile Include="Controllers\PartnersController.cs" />
     <Compile Include="Controllers\PhieuDCsController.cs" />
@@ -302,7 +304,6 @@
     <Content Include="Views\Admin\BaoCaoTaiChinh.cshtml" />
     <Content Include="Views\Admin\HoTroKH.cshtml" />
     <Content Include="Views\Admin\TourDetails.cshtml" />
-    <Content Include="Views\Admin\CTCTKM.cshtml" />
     <Content Include="Views\Admin\CTDoiTac.cshtml" />
     <Content Include="Views\Tours\Create.cshtml" />
     <Content Include="Views\Tours\Delete.cshtml" />
@@ -332,6 +333,32 @@
     <Content Include="Views\Admin\ChinhSuaTour.cshtml" />
     <Content Include="Views\Admin\XoaTour.cshtml" />
     <Content Include="Views\Admin\TaoTour.cshtml" />
+    <Content Include="Views\Admin\NhanVienDetails.cshtml" />
+    <Content Include="Views\Admin\TaoNhanVien.cshtml" />
+    <Content Include="Views\Admin\KhachHangDetails.cshtml" />
+    <Content Include="Views\Admin\TaoKhachHang.cshtml" />
+    <Content Include="Views\Coupons\Create.cshtml" />
+    <Content Include="Views\Coupons\Delete.cshtml" />
+    <Content Include="Views\Coupons\Details.cshtml" />
+    <Content Include="Views\Coupons\Edit.cshtml" />
+    <Content Include="Views\Coupons\Index.cshtml" />
+    <Content Include="Views\Admin\ChinhSuaNV.cshtml" />
+    <Content Include="Views\Admin\TaoCTKM.cshtml" />
+    <Content Include="Views\Admin\CTKMDetails.cshtml" />
+    <Content Include="Views\Admin\ChinhSuaCTKM.cshtml" />
+    <Content Include="Views\Admin\XoaCTKM.cshtml" />
+    <Content Include="Views\Admin\DoiTacDetails.cshtml" />
+    <Content Include="Views\Admin\TaoDoiTac.cshtml" />
+    <Content Include="Views\Admin\ChinhSuaDoiTac.cshtml" />
+    <Content Include="Views\Admin\XoaDoiTac.cshtml" />
+    <Content Include="Views\LoaiKHs\Create.cshtml" />
+    <Content Include="Views\LoaiKHs\Delete.cshtml" />
+    <Content Include="Views\LoaiKHs\Details.cshtml" />
+    <Content Include="Views\LoaiKHs\Edit.cshtml" />
+    <Content Include="Views\LoaiKHs\Index.cshtml" />
+    <Content Include="Views\Admin\LoaiKH.cshtml" />
+    <Content Include="Views\Admin\TaoLoaiKH.cshtml" />
+    <Content Include="Views\Admin\XoaLoaiKH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

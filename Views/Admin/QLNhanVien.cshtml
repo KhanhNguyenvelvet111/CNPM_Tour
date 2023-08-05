@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<CNPM_Tour.Models.NhanVien>
+
 @{
     ViewBag.Title = "QLNhanVien";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
@@ -10,60 +11,64 @@
     @* table 1*@
     <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="#">
+            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="~/Admin/TaoNhanVien">
                 <i class="fas fa-plus"> </i> Thêm Nhân viên
             </a>
-           
-            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="#">
+            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="~/Admin/QLNhanVien">
                 <i class="fas fa-solid fa-print"> </i>  Làm mới danh sách
             </a>
-
             <div class="tile">
-
                 <h2 class="tile-title">Danh sách Nhân Viên</h2>
                 <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
                     <thead>
                         <tr>
-                            <th class="text-center">Mã Nhân viên</th>
-                            <th class="text-center">
-                                Tên Nhân viên
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaNV)
                             </th>
-                            <th class="text-center">
-                                Chức vụ
-                            </th>             
-                            <th class="text-center">
-                                Chức năng
+                            <th>
+                                @Html.DisplayNameFor(model => model.TenNV)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ChucVu)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TrangThai)
+                            </th>
+                            <th>
+                                <span> Chức năng</span>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="text-center">
-                                gdfgdfg
-                            </td>                         
-                            <td class="text-center">
-                                dsgf gdf
-                            </td>
-                            <td class="text-center">
-                                dsgf gdf
-                            </td>
-                            <td class="text-center">
-                                <a href="#">Active</a>
-                                <span> || </span>
-                                <a href="#">Inactive</a>
+                        @foreach (var item in Model)
+                        {
+                            if (item.TrangThai == true)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MaNV)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TenNV)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ChucVu)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TrangThai)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Chinh Sua", "ChinhSuaNV", new { id = item.MaNV }) |
+                                        @Html.ActionLink("ChiTiet", "NhanVienDetails", new { id = item.MaNV }) |
+                                    </td>
+                                </tr>
+                            }
 
-                                @*<a class="btn btn-cancel" title="Edit" href="#">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    <a class="btn btn-excel" ata-toggle="tooltip" title="Delete" data-target="#" data-toggle="modal">
-                                        <i class="fas fa-trash"></i>
-                                    </a>*@
-                            </td>
-                        </tr>
+                        }
                     </tbody>
                 </table>
                 @*<a class="btn btn-cancel" title="Trở lại" href="~/Tourmanager/QuanLyTour">
-                        Trở lại
+                          Trở lại
                     </a>*@
             </div>
         </div>

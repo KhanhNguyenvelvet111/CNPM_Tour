@@ -10,107 +10,107 @@ using CNPM_Tour.Models;
 
 namespace CNPM_Tour.Controllers
 {
-    public class NhanViensController : Controller
+    public class LoaiKHsController : Controller
     {
         private CNPMEntities db = new CNPMEntities();
 
-        // GET: NhanViens
+        // GET: LoaiKHs
         public ActionResult Index()
         {
-            return View(db.NhanViens.ToList());
+            return View(db.LoaiKHs.ToList());
         }
 
-        // GET: NhanViens/Details/5
+        // GET: LoaiKHs/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            if (nhanVien == null)
+            LoaiKH loaiKH = db.LoaiKHs.Find(id);
+            if (loaiKH == null)
             {
                 return HttpNotFound();
             }
-            return View(nhanVien);
+            return View(loaiKH);
         }
 
-        // GET: NhanViens/Create
+        // GET: LoaiKHs/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: NhanViens/Create
+        // POST: LoaiKHs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaNV,TenNV,ChucVu,TrangThai")] NhanVien nhanVien)
+        public ActionResult Create([Bind(Include = "MaLKH,LoaiKH1")] LoaiKH loaiKH)
         {
             if (ModelState.IsValid)
             {
-                db.NhanViens.Add(nhanVien);
+                db.LoaiKHs.Add(loaiKH);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(nhanVien);
+            return View(loaiKH);
         }
 
-        // GET: NhanViens/Edit/5
+        // GET: LoaiKHs/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            if (nhanVien == null)
+            LoaiKH loaiKH = db.LoaiKHs.Find(id);
+            if (loaiKH == null)
             {
                 return HttpNotFound();
             }
-            return View(nhanVien);
+            return View(loaiKH);
         }
 
-        // POST: NhanViens/Edit/5
+        // POST: LoaiKHs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaNV,TenNV,ChucVu")] NhanVien nhanVien)
+        public ActionResult Edit([Bind(Include = "MaLKH,LoaiKH1")] LoaiKH loaiKH)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(nhanVien).State = EntityState.Modified;
+                db.Entry(loaiKH).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(nhanVien);
+            return View(loaiKH);
         }
 
-        // GET: NhanViens/Delete/5
+        // GET: LoaiKHs/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            if (nhanVien == null)
+            LoaiKH loaiKH = db.LoaiKHs.Find(id);
+            if (loaiKH == null)
             {
                 return HttpNotFound();
             }
-            return View(nhanVien);
+            return View(loaiKH);
         }
 
-        // POST: NhanViens/Delete/5
+        // POST: LoaiKHs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            NhanVien nhanVien = db.NhanViens.Find(id);
-            db.NhanViens.Remove(nhanVien);
+            LoaiKH loaiKH = db.LoaiKHs.Find(id);
+            db.LoaiKHs.Remove(loaiKH);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
