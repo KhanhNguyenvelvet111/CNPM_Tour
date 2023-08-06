@@ -359,6 +359,8 @@
     <Content Include="Views\Admin\LoaiKH.cshtml" />
     <Content Include="Views\Admin\TaoLoaiKH.cshtml" />
     <Content Include="Views\Admin\XoaLoaiKH.cshtml" />
+    <Content Include="Views\Admin\TaoBCTC.cshtml" />
+    <Content Include="Views\Admin\BCTCDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

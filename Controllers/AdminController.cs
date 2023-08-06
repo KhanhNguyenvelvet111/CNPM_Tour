@@ -429,9 +429,20 @@ namespace CNPM_Tour.Controllers
         #region mình sẽ làm tất cả chức năng liên quan đến BCTC
         public ActionResult BaoCaoTaiChinh()
         {
-
-            return View();
+            var tours = db.Tours.Include(t => t.Partner);
+            return View(tours.ToList());
         }
+        public ActionResult TaoBCTC()
+        {
+            return View(db.LoaiKHs.ToList());
+        }
+        public ActionResult BCTCDetails()
+        {
+            return View(db.LoaiKHs.ToList());
+        }
+
+
+
         #endregion
         #region mình sẽ làm tất cả chức năng liên quan đến HTKH
         public ActionResult HoTroKH()

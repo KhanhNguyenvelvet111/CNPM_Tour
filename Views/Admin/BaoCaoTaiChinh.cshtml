@@ -1,89 +1,90 @@
-﻿
+﻿@model IEnumerable<CNPM_Tour.Models.Tour>
 @{
     ViewBag.Title = "BaoCaoTaiChinh";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
-    ViewBag.Name = "Báo cáo tài chính";
-    ViewBag.bctc = "active";
+    ViewBag.Name = "Báo cáo tài chính";    
 }
-<body>
-    <div class="" style="width: 230px; white-space: nowrap; margin: 4px auto; border: 2px solid #000; border-radius: 10px; padding-top: 10px; ">
-        <div class="" style="height: 100%;   display: flex;   justify-content: center;   align-items: center;">
-            <p class="" style="font-size: 24px;  font-weight: bold;">Báo cáo tài chính</p>
-        </div>
-    </div>
 
+<body>
     @* table 1*@
     <div class="row">
         <div class="col-md-12">
-           
-            <a class="btn btn-sm btn-print " type="button" title="In danh sách" href="#">
+            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="~/Admin/TaoBCTC">
+                <i class="fas fa-plus"> </i> Tạo BCTC
+            </a>
+            <a class="btn btn-sm btn-print " type="button" title="In danh sách" href="#" onclick="printDiv('printMe')">
                 <i class="fas fa-solid fa-print"> </i>  In danh sách
             </a>
-            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="#">
+            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="~/Admin/QLTour">
                 <i class="fas fa-solid fa-print"> </i>  Làm mới danh sách
             </a>
 
-            <div class="tile">
-
-                <h2 class="tile-title">Danh sách Doanh thu của từng Tour</h2>
-                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" role="grid" aria-describedby="sampleTable_info">
+            <div class="tile" id="printMe">
+                <h2 class="tile-title">Báo cáo tài chính</h2>
+                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
                     <thead>
                         <tr>
-                            <th class="text-center">
-                                Mã Tour
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaTour)
                             </th>
-                            <th class="text-center">
-                                Tên Tour
+                            <th>
+                                @Html.DisplayNameFor(model => model.TenTour)
+                            </th>                          
+                            <th>
+                                <span>Thời gian mở bán</span>
                             </th>
-                            <th class="text-center">
-                                Thời gian mở bán
+                            <th>
+                                <span>Doanh thu</span>
                             </th>
-                            <th class="text-center">
-                                Doanh thu theo tháng
+
+                            <th>
+                                <span>Tổng doanh thu</span>
                             </th>
-                            <th class="text-center">
-                                Tổng doanh thu 
-                            </th>
-                            <th class="text-center">
-                                Chức năng
+                            <th>
+                                <span> Chức năng</span>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="text-center">
-                                gdfgdfg
-                            </td>
-                            <td class="text-center">
-                                g dfgd dfg
-                            </td>
-                            <td class="text-center">
-                                dsgf gdf
-                            </td>
-                            <td class="text-center">
-                                dsgf gdf
-                            </td>
-                            <td class="text-center">
-                                dsgf gdf
-                            </td>
-                            <td class="text-center">
-                                <a href="#">Chi tiết</a>
-                               
-
-                                @*<a class="btn btn-cancel" title="Edit" href="#">
-                <i class="fas fa-edit"></i>
-            </a>
-            <a class="btn btn-excel" ata-toggle="tooltip" title="Delete" data-target="#" data-toggle="modal">
-                <i class="fas fa-trash"></i>
-            </a>*@
-                            </td>
-                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaTour)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenTour)
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                              
+                                <td style="text-align:center">                                   
+                                    @Html.ActionLink("Details", "BCTCDetails", new { id = item.MaTour }) 
+                                    
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
-                @*<a class="btn btn-cancel" title="Trở lại" href="~/Tourmanager/QuanLyTour">
-                        Trở lại
-                    </a>*@
+                
             </div>
         </div>
     </div>
+    <script>
+        //In dữ liệu
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
 </body>

@@ -5,19 +5,62 @@
     ViewBag.Name = "Hỗ trợ khách hàng";
     ViewBag.htkh = "active";
 }
+<body>
 
-<h2>HoTroKH</h2>
-
-<div class="row" style="padding: 10px 20px">
-    <div class="col-xs-12">
-        <a class="widget-small info coloured-icon @ViewBag.qlk" href="#">
-            <img src="~/Images/avt2.jpg" class="rounded" style="width: 120px; height: 120px; object-fit: cover;" />
-            @*<i class='icon bx bxs-user-account fa-3x'></i>*@
-            <div class="info">
-                <h4>Thông tin tour</h4>
-                <p><b>Tổng @TempData["tongTour"] tour được quản lý</b></p>
-                <p class="info-tong">Tổng số tour được tạo</p>
-            </div>
-        </a>
+    <div class="" style="height: 100%; display: flex; justify-content: center; align-items: center;">
+        <p class="" style="font-size: 24px; border: 2px solid #000; border-radius: 10px;padding:10px; font-weight: bold;">Hỗ trợ khách hàng</p>
     </div>
-</div>
+
+    <div class="row">
+
+        <div class="col-6" style="padding:0px">
+            <a href="~/Admin/HoTroKH">
+                <p class="" style=" font-size: 24px; border: 2px solid #000;  padding: 10px; font-weight: bold; text-align: center; width: fit-content; float: right;;">Hỗ trợ trực tuyến</p>
+            </a>
+        </div>
+
+
+        <div class="col-6" style="padding: 0px">
+            <a href="#">
+                <p class="" style=" font-size: 24px; border: 2px solid #000; padding: 10px; font-weight: bold; text-align: center; width: fit-content;">Phiếu hỗ trợ</p>
+            </a>
+        </div>
+
+    </div>
+
+
+
+    <div class="row" style="padding: 10px 20px">
+        <div class="col-xs-12">
+
+            <a class="widget-small info coloured-icon @ViewBag.qlk" href="#">
+                <img src="~/Images/avt2.jpg" class="rounded" style="width: 120px; height: 120px; object-fit: cover;" />
+                @*<i class='icon bx bxs-user-account fa-3x'></i>*@
+                <div class="info">
+                    <h4>Tên khách hàng:</h4>
+                    <p><b>Mã phiếu: </b></p>
+                    <p class="info-tong">Nội dung chat:</p>
+                </div>
+            </a>
+            <a class="widget-small info coloured-icon @ViewBag.qlk" href="#">
+                <img src="~/Images/avt2.jpg" class="rounded" style="width: 120px; height: 120px; object-fit: cover;" />
+                @*<i class='icon bx bxs-user-account fa-3x'></i>*@
+                <div class="info">
+                    <h4>Tên khách hàng:</h4>
+                    <p><b>Mã phiếu: </b></p>
+                    <p class="info-tong">Nội dung chat:</p>
+                </div>
+            </a>
+            <a class="widget-small info coloured-icon @ViewBag.qlk" href="#">
+                <img src="~/Images/avt2.jpg" class="rounded" style="width: 120px; height: 120px; object-fit: cover;" />
+                @*<i class='icon bx bxs-user-account fa-3x'></i>*@
+                <div class="info">
+                    <h4>Tên khách hàng:</h4>
+                    <p><b>Mã phiếu: </b></p>
+                    <p class="info-tong">Nội dung chat:</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</body>
