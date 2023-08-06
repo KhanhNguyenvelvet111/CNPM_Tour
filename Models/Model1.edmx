@@ -1,0 +1,1076 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CNPMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Coupon">
+          <Key>
+            <PropertyRef Name="MaCoupon" />
+          </Key>
+          <Property Name="MaCoupon" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Discount" Type="float" />
+        </EntityType>
+        <EntityType Name="HoTro">
+          <Key>
+            <PropertyRef Name="MaNN" />
+            <PropertyRef Name="MaTour" />
+          </Key>
+          <Property Name="MaNN" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaTour" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenKH" Type="nvarchar" MaxLength="30" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="MatKhau" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SDT" Type="char" MaxLength="10" />
+          <Property Name="SDT2" Type="char" MaxLength="10" />
+          <Property Name="SDT3" Type="char" MaxLength="10" />
+          <Property Name="Email2" Type="varchar" MaxLength="100" />
+          <Property Name="Email3" Type="varchar" MaxLength="100" />
+          <Property Name="MaLKH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="GioiTinh" Type="bit" />
+        </EntityType>
+        <EntityType Name="LoaiKH">
+          <Key>
+            <PropertyRef Name="MaLKH" />
+          </Key>
+          <Property Name="MaLKH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="LoaiKH" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LT_Tour">
+          <Key>
+            <PropertyRef Name="ID_HD" />
+            <PropertyRef Name="Ngay" />
+            <PropertyRef Name="MaTour" />
+          </Key>
+          <Property Name="ID_HD" Type="int" Nullable="false" />
+          <Property Name="Ngay" Type="int" Nullable="false" />
+          <Property Name="MaTour" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="GioBD" Type="time" Precision="7" />
+          <Property Name="GioKT" Type="time" Precision="7" />
+          <Property Name="HoatDong" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="NgayBan">
+          <Key>
+            <PropertyRef Name="MaPT" />
+          </Key>
+          <Property Name="MaPT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="SLVeBan" Type="int" />
+          <Property Name="NgayBD" Type="date" />
+          <Property Name="NgayKT" Type="date" />
+        </EntityType>
+        <EntityType Name="NgonNgu">
+          <Key>
+            <PropertyRef Name="MaNN" />
+          </Key>
+          <Property Name="MaNN" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenNN" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenNV" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ChucVu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TrangThai" Type="bit" />
+        </EntityType>
+        <EntityType Name="PacketTour">
+          <Key>
+            <PropertyRef Name="MaPT" />
+          </Key>
+          <Property Name="MaPT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaTour" Type="varchar" MaxLength="10" />
+          <Property Name="STK_NH" Type="varchar" MaxLength="50" />
+          <Property Name="TenPT" Type="nvarchar" MaxLength="100" />
+          <Property Name="Duration" Type="int" />
+          <Property Name="SLVoucher" Type="int" Nullable="false" />
+          <Property Name="Preserve" Type="bit" Nullable="false" />
+          <Property Name="PreserveDays" Type="int" />
+          <Property Name="DKDK" Type="nvarchar(max)" />
+          <Property Name="DoiLich" Type="bit" Nullable="false" />
+          <Property Name="CSDoiLich" Type="nvarchar(max)" />
+          <Property Name="GiaGoc_A" Type="int" />
+          <Property Name="GiaTraveloka_A" Type="int" />
+          <Property Name="GiaGoc_C" Type="int" />
+          <Property Name="GiaTraveloka_C" Type="int" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="MaDT" />
+          </Key>
+          <Property Name="MaDT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenDT" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MaQG" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="SDT" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Website" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PhieuDC">
+          <Key>
+            <PropertyRef Name="MaDC" />
+          </Key>
+          <Property Name="MaDC" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaPT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaPTTT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NgayDatCho" Type="date" Nullable="false" />
+          <Property Name="Ngaythamquan" Type="date" Nullable="false" />
+          <Property Name="TenKH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SDTKH" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="EmailKH" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="YCThem" Type="nvarchar(max)" />
+          <Property Name="PickUp" Type="nvarchar(max)" />
+          <Property Name="Invoice" Type="int" Nullable="false" />
+          <Property Name="SLAdult" Type="int" />
+          <Property Name="SLChild" Type="int" />
+        </EntityType>
+        <EntityType Name="PhuongThucThanhToan">
+          <Key>
+            <PropertyRef Name="MaPTTT" />
+          </Key>
+          <Property Name="MaPTTT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenPTTT" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="ImgURL" />
+          </Key>
+          <Property Name="MaTour" Type="varchar" MaxLength="10" />
+          <Property Name="ImgURL" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SoHuu">
+          <Key>
+            <PropertyRef Name="MaCoupon" />
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaCoupon" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TKTT">
+          <Key>
+            <PropertyRef Name="STK_NH" />
+          </Key>
+          <Property Name="STK_NH" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TenNH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MaDT" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tour">
+          <Key>
+            <PropertyRef Name="MaTour" />
+          </Key>
+          <Property Name="MaTour" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenTour" Type="nvarchar" MaxLength="100" />
+          <Property Name="DiaDiem" Type="nvarchar" MaxLength="100" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="TTVC" Type="nvarchar(max)" />
+          <Property Name="forsale" Type="bit" />
+          <Property Name="BannerUrl" Type="varchar" MaxLength="100" />
+          <Property Name="MaDT" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserPoints">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="SLXu" Type="int" />
+          <Property Name="ActiDate" Type="date" />
+          <Property Name="ExpDate" Type="date" />
+          <Property Name="expState" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__HoTro__MaNN__398D8EEE">
+          <End Role="NgonNgu" Type="Self.NgonNgu" Multiplicity="1" />
+          <End Role="HoTro" Type="Self.HoTro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NgonNgu">
+              <PropertyRef Name="MaNN" />
+            </Principal>
+            <Dependent Role="HoTro">
+              <PropertyRef Name="MaNN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HoTro__MaTour__3A81B327">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
+          <End Role="HoTro" Type="Self.HoTro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="HoTro">
+              <PropertyRef Name="MaTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__KhachHang__MaLKH__3F466844">
+          <End Role="LoaiKH" Type="Self.LoaiKH" Multiplicity="1" />
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiKH">
+              <PropertyRef Name="MaLKH" />
+            </Principal>
+            <Dependent Role="KhachHang">
+              <PropertyRef Name="MaLKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LT_Tour__MaTour__2B3F6F97">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
+          <End Role="LT_Tour" Type="Self.LT_Tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="LT_Tour">
+              <PropertyRef Name="MaTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__NgayBan__MaPT__4CA06362">
+          <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="1" />
+          <End Role="NgayBan" Type="Self.NgayBan" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PacketTour">
+              <PropertyRef Name="MaPT" />
+            </Principal>
+            <Dependent Role="NgayBan">
+              <PropertyRef Name="MaPT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PacketTou__MaTou__4222D4EF">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
+          <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="PacketTour">
+              <PropertyRef Name="MaTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PhieuDC__MaKH__44FF419A">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+          <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="PhieuDC">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PhieuDC__MaPT__45F365D3">
+          <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="1" />
+          <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PacketTour">
+              <PropertyRef Name="MaPT" />
+            </Principal>
+            <Dependent Role="PhieuDC">
+              <PropertyRef Name="MaPT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PhieuDC__MaPTTT__46E78A0C">
+          <End Role="PhuongThucThanhToan" Type="Self.PhuongThucThanhToan" Multiplicity="1" />
+          <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhuongThucThanhToan">
+              <PropertyRef Name="MaPTTT" />
+            </Principal>
+            <Dependent Role="PhieuDC">
+              <PropertyRef Name="MaPTTT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Picture__MaTour__2E1BDC42">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
+          <End Role="Picture" Type="Self.Picture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="Picture">
+              <PropertyRef Name="MaTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SoHuu__MaCoupon__4F7CD00D">
+          <End Role="Coupon" Type="Self.Coupon" Multiplicity="1" />
+          <End Role="SoHuu" Type="Self.SoHuu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coupon">
+              <PropertyRef Name="MaCoupon" />
+            </Principal>
+            <Dependent Role="SoHuu">
+              <PropertyRef Name="MaCoupon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SoHuu__MaKH__5070F446">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+          <End Role="SoHuu" Type="Self.SoHuu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="SoHuu">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TKTT__MaDT__36B12243">
+          <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
+          <End Role="TKTT" Type="Self.TKTT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partner">
+              <PropertyRef Name="MaDT" />
+            </Principal>
+            <Dependent Role="TKTT">
+              <PropertyRef Name="MaDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tour__MaDT__286302EC">
+          <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
+          <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partner">
+              <PropertyRef Name="MaDT" />
+            </Principal>
+            <Dependent Role="Tour">
+              <PropertyRef Name="MaDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserPoints__MaKH__49C3F6B7">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+          <End Role="UserPoints" Type="Self.UserPoints" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="UserPoints">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CNPMModelStoreContainer">
+          <EntitySet Name="Coupon" EntityType="Self.Coupon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HoTro" EntityType="Self.HoTro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiKH" EntityType="Self.LoaiKH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LT_Tour" EntityType="Self.LT_Tour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgayBan" EntityType="Self.NgayBan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgonNgu" EntityType="Self.NgonNgu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PacketTour" EntityType="Self.PacketTour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partner" EntityType="Self.Partner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhieuDC" EntityType="Self.PhieuDC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhuongThucThanhToan" EntityType="Self.PhuongThucThanhToan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Picture" EntityType="Self.Picture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SoHuu" EntityType="Self.SoHuu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TKTT" EntityType="Self.TKTT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tour" EntityType="Self.Tour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPoints" EntityType="Self.UserPoints" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__HoTro__MaNN__398D8EEE" Association="Self.FK__HoTro__MaNN__398D8EEE">
+            <End Role="NgonNgu" EntitySet="NgonNgu" />
+            <End Role="HoTro" EntitySet="HoTro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HoTro__MaTour__3A81B327" Association="Self.FK__HoTro__MaTour__3A81B327">
+            <End Role="Tour" EntitySet="Tour" />
+            <End Role="HoTro" EntitySet="HoTro" />
+          </AssociationSet>
+          <AssociationSet Name="FK__KhachHang__MaLKH__3F466844" Association="Self.FK__KhachHang__MaLKH__3F466844">
+            <End Role="LoaiKH" EntitySet="LoaiKH" />
+            <End Role="KhachHang" EntitySet="KhachHang" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LT_Tour__MaTour__2B3F6F97" Association="Self.FK__LT_Tour__MaTour__2B3F6F97">
+            <End Role="Tour" EntitySet="Tour" />
+            <End Role="LT_Tour" EntitySet="LT_Tour" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NgayBan__MaPT__4CA06362" Association="Self.FK__NgayBan__MaPT__4CA06362">
+            <End Role="PacketTour" EntitySet="PacketTour" />
+            <End Role="NgayBan" EntitySet="NgayBan" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PacketTou__MaTou__4222D4EF" Association="Self.FK__PacketTou__MaTou__4222D4EF">
+            <End Role="Tour" EntitySet="Tour" />
+            <End Role="PacketTour" EntitySet="PacketTour" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PhieuDC__MaKH__44FF419A" Association="Self.FK__PhieuDC__MaKH__44FF419A">
+            <End Role="KhachHang" EntitySet="KhachHang" />
+            <End Role="PhieuDC" EntitySet="PhieuDC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PhieuDC__MaPT__45F365D3" Association="Self.FK__PhieuDC__MaPT__45F365D3">
+            <End Role="PacketTour" EntitySet="PacketTour" />
+            <End Role="PhieuDC" EntitySet="PhieuDC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PhieuDC__MaPTTT__46E78A0C" Association="Self.FK__PhieuDC__MaPTTT__46E78A0C">
+            <End Role="PhuongThucThanhToan" EntitySet="PhuongThucThanhToan" />
+            <End Role="PhieuDC" EntitySet="PhieuDC" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Picture__MaTour__2E1BDC42" Association="Self.FK__Picture__MaTour__2E1BDC42">
+            <End Role="Tour" EntitySet="Tour" />
+            <End Role="Picture" EntitySet="Picture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SoHuu__MaCoupon__4F7CD00D" Association="Self.FK__SoHuu__MaCoupon__4F7CD00D">
+            <End Role="Coupon" EntitySet="Coupon" />
+            <End Role="SoHuu" EntitySet="SoHuu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SoHuu__MaKH__5070F446" Association="Self.FK__SoHuu__MaKH__5070F446">
+            <End Role="KhachHang" EntitySet="KhachHang" />
+            <End Role="SoHuu" EntitySet="SoHuu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TKTT__MaDT__36B12243" Association="Self.FK__TKTT__MaDT__36B12243">
+            <End Role="Partner" EntitySet="Partner" />
+            <End Role="TKTT" EntitySet="TKTT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tour__MaDT__286302EC" Association="Self.FK__Tour__MaDT__286302EC">
+            <End Role="Partner" EntitySet="Partner" />
+            <End Role="Tour" EntitySet="Tour" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserPoints__MaKH__49C3F6B7" Association="Self.FK__UserPoints__MaKH__49C3F6B7">
+            <End Role="KhachHang" EntitySet="KhachHang" />
+            <End Role="UserPoints" EntitySet="UserPoints" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CNPMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Coupon">
+          <Key>
+            <PropertyRef Name="MaCoupon" />
+          </Key>
+          <Property Name="MaCoupon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Discount" Type="Double" />
+          <NavigationProperty Name="KhachHangs" Relationship="Self.SoHuu" FromRole="Coupon" ToRole="KhachHang" />
+        </EntityType>
+        <EntityType Name="KhachHang">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenKH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="SDT2" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="SDT3" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Email2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MaLKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GioiTinh" Type="Boolean" />
+          <NavigationProperty Name="LoaiKH" Relationship="Self.FK__KhachHang__MaLKH__3F466844" FromRole="KhachHang" ToRole="LoaiKH" />
+          <NavigationProperty Name="PhieuDCs" Relationship="Self.FK__PhieuDC__MaKH__44FF419A" FromRole="KhachHang" ToRole="PhieuDC" />
+          <NavigationProperty Name="UserPoint" Relationship="Self.FK__UserPoints__MaKH__49C3F6B7" FromRole="KhachHang" ToRole="UserPoints" />
+          <NavigationProperty Name="Coupons" Relationship="Self.SoHuu" FromRole="KhachHang" ToRole="Coupon" />
+        </EntityType>
+        <EntityType Name="LoaiKH">
+          <Key>
+            <PropertyRef Name="MaLKH" />
+          </Key>
+          <Property Name="MaLKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LoaiKH1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="KhachHangs" Relationship="Self.FK__KhachHang__MaLKH__3F466844" FromRole="LoaiKH" ToRole="KhachHang" />
+        </EntityType>
+        <EntityType Name="LT_Tour">
+          <Key>
+            <PropertyRef Name="ID_HD" />
+            <PropertyRef Name="Ngay" />
+            <PropertyRef Name="MaTour" />
+          </Key>
+          <Property Name="ID_HD" Type="Int32" Nullable="false" />
+          <Property Name="Ngay" Type="Int32" Nullable="false" />
+          <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GioBD" Type="Time" Precision="7" />
+          <Property Name="GioKT" Type="Time" Precision="7" />
+          <Property Name="HoatDong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK__LT_Tour__MaTour__2B3F6F97" FromRole="LT_Tour" ToRole="Tour" />
+        </EntityType>
+        <EntityType Name="NgayBan">
+          <Key>
+            <PropertyRef Name="MaPT" />
+          </Key>
+          <Property Name="MaPT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SLVeBan" Type="Int32" />
+          <Property Name="NgayBD" Type="DateTime" Precision="0" />
+          <Property Name="NgayKT" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="PacketTour" Relationship="Self.FK__NgayBan__MaPT__4CA06362" FromRole="NgayBan" ToRole="PacketTour" />
+        </EntityType>
+        <EntityType Name="NgonNgu">
+          <Key>
+            <PropertyRef Name="MaNN" />
+          </Key>
+          <Property Name="MaNN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tours" Relationship="Self.HoTro" FromRole="NgonNgu" ToRole="Tour" />
+        </EntityType>
+        <EntityType Name="NhanVien">
+          <Key>
+            <PropertyRef Name="MaNV" />
+          </Key>
+          <Property Name="MaNV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TrangThai" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PacketTour">
+          <Key>
+            <PropertyRef Name="MaPT" />
+          </Key>
+          <Property Name="MaPT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="STK_NH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TenPT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="SLVoucher" Type="Int32" Nullable="false" />
+          <Property Name="Preserve" Type="Boolean" Nullable="false" />
+          <Property Name="PreserveDays" Type="Int32" />
+          <Property Name="DKDK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DoiLich" Type="Boolean" Nullable="false" />
+          <Property Name="CSDoiLich" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GiaGoc_A" Type="Int32" />
+          <Property Name="GiaTraveloka_A" Type="Int32" />
+          <Property Name="GiaGoc_C" Type="Int32" />
+          <Property Name="GiaTraveloka_C" Type="Int32" />
+          <NavigationProperty Name="NgayBan" Relationship="Self.FK__NgayBan__MaPT__4CA06362" FromRole="PacketTour" ToRole="NgayBan" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK__PacketTou__MaTou__4222D4EF" FromRole="PacketTour" ToRole="Tour" />
+          <NavigationProperty Name="PhieuDCs" Relationship="Self.FK__PhieuDC__MaPT__45F365D3" FromRole="PacketTour" ToRole="PhieuDC" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="MaDT" />
+          </Key>
+          <Property Name="MaDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenDT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaQG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TKTTs" Relationship="Self.FK__TKTT__MaDT__36B12243" FromRole="Partner" ToRole="TKTT" />
+          <NavigationProperty Name="Tours" Relationship="Self.FK__Tour__MaDT__286302EC" FromRole="Partner" ToRole="Tour" />
+        </EntityType>
+        <EntityType Name="PhieuDC">
+          <Key>
+            <PropertyRef Name="MaDC" />
+          </Key>
+          <Property Name="MaDC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaPT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MaPTTT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NgayDatCho" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Ngaythamquan" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SDTKH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="EmailKH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="YCThem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PickUp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice" Type="Int32" Nullable="false" />
+          <Property Name="SLAdult" Type="Int32" />
+          <Property Name="SLChild" Type="Int32" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK__PhieuDC__MaKH__44FF419A" FromRole="PhieuDC" ToRole="KhachHang" />
+          <NavigationProperty Name="PacketTour" Relationship="Self.FK__PhieuDC__MaPT__45F365D3" FromRole="PhieuDC" ToRole="PacketTour" />
+          <NavigationProperty Name="PhuongThucThanhToan" Relationship="Self.FK__PhieuDC__MaPTTT__46E78A0C" FromRole="PhieuDC" ToRole="PhuongThucThanhToan" />
+        </EntityType>
+        <EntityType Name="PhuongThucThanhToan">
+          <Key>
+            <PropertyRef Name="MaPTTT" />
+          </Key>
+          <Property Name="MaPTTT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenPTTT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="PhieuDCs" Relationship="Self.FK__PhieuDC__MaPTTT__46E78A0C" FromRole="PhuongThucThanhToan" ToRole="PhieuDC" />
+        </EntityType>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="ImgURL" />
+          </Key>
+          <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ImgURL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tour" Relationship="Self.FK__Picture__MaTour__2E1BDC42" FromRole="Picture" ToRole="Tour" />
+        </EntityType>
+        <EntityType Name="TKTT">
+          <Key>
+            <PropertyRef Name="STK_NH" />
+          </Key>
+          <Property Name="STK_NH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenNH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Partner" Relationship="Self.FK__TKTT__MaDT__36B12243" FromRole="TKTT" ToRole="Partner" />
+        </EntityType>
+        <EntityType Name="Tour">
+          <Key>
+            <PropertyRef Name="MaTour" />
+          </Key>
+          <Property Name="MaTour" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenTour" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DiaDiem" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TTVC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="forsale" Type="Boolean" />
+          <Property Name="BannerUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MaDT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LT_Tour" Relationship="Self.FK__LT_Tour__MaTour__2B3F6F97" FromRole="Tour" ToRole="LT_Tour" />
+          <NavigationProperty Name="PacketTours" Relationship="Self.FK__PacketTou__MaTou__4222D4EF" FromRole="Tour" ToRole="PacketTour" />
+          <NavigationProperty Name="Partner" Relationship="Self.FK__Tour__MaDT__286302EC" FromRole="Tour" ToRole="Partner" />
+          <NavigationProperty Name="Pictures" Relationship="Self.FK__Picture__MaTour__2E1BDC42" FromRole="Tour" ToRole="Picture" />
+          <NavigationProperty Name="NgonNgus" Relationship="Self.HoTro" FromRole="Tour" ToRole="NgonNgu" />
+        </EntityType>
+        <EntityType Name="UserPoint">
+          <Key>
+            <PropertyRef Name="MaKH" />
+          </Key>
+          <Property Name="MaKH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SLXu" Type="Int32" />
+          <Property Name="ActiDate" Type="DateTime" Precision="0" />
+          <Property Name="ExpDate" Type="DateTime" Precision="0" />
+          <Property Name="expState" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="KhachHang" Relationship="Self.FK__UserPoints__MaKH__49C3F6B7" FromRole="UserPoints" ToRole="KhachHang" />
+        </EntityType>
+        <Association Name="FK__KhachHang__MaLKH__3F466844">
+          <End Role="LoaiKH" Type="Self.LoaiKH" Multiplicity="1" />
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiKH">
+              <PropertyRef Name="MaLKH" />
+            </Principal>
+            <Dependent Role="KhachHang">
+              <PropertyRef Name="MaLKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PhieuDC__MaKH__44FF419A">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+          <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="PhieuDC">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserPoints__MaKH__49C3F6B7">
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
+          <End Role="UserPoints" Type="Self.UserPoint" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="KhachHang">
+              <PropertyRef Name="MaKH" />
+            </Principal>
+            <Dependent Role="UserPoints">
+              <PropertyRef Name="MaKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LT_Tour__MaTour__2B3F6F97">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="1" />
+          <End Role="LT_Tour" Type="Self.LT_Tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="LT_Tour">
+              <PropertyRef Name="MaTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__NgayBan__MaPT__4CA06362">
+          <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="1" />
+          <End Role="NgayBan" Type="Self.NgayBan" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PacketTour">
+              <PropertyRef Name="MaPT" />
+            </Principal>
+            <Dependent Role="NgayBan">
+              <PropertyRef Name="MaPT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PacketTou__MaTou__4222D4EF">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
+          <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="PacketTour">
+              <PropertyRef Name="MaTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PhieuDC__MaPT__45F365D3">
+          <End Role="PacketTour" Type="Self.PacketTour" Multiplicity="1" />
+          <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PacketTour">
+              <PropertyRef Name="MaPT" />
+            </Principal>
+            <Dependent Role="PhieuDC">
+              <PropertyRef Name="MaPT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TKTT__MaDT__36B12243">
+          <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
+          <End Role="TKTT" Type="Self.TKTT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partner">
+              <PropertyRef Name="MaDT" />
+            </Principal>
+            <Dependent Role="TKTT">
+              <PropertyRef Name="MaDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tour__MaDT__286302EC">
+          <End Role="Partner" Type="Self.Partner" Multiplicity="1" />
+          <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partner">
+              <PropertyRef Name="MaDT" />
+            </Principal>
+            <Dependent Role="Tour">
+              <PropertyRef Name="MaDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PhieuDC__MaPTTT__46E78A0C">
+          <End Role="PhuongThucThanhToan" Type="Self.PhuongThucThanhToan" Multiplicity="1" />
+          <End Role="PhieuDC" Type="Self.PhieuDC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhuongThucThanhToan">
+              <PropertyRef Name="MaPTTT" />
+            </Principal>
+            <Dependent Role="PhieuDC">
+              <PropertyRef Name="MaPTTT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Picture__MaTour__2E1BDC42">
+          <End Role="Tour" Type="Self.Tour" Multiplicity="0..1" />
+          <End Role="Picture" Type="Self.Picture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tour">
+              <PropertyRef Name="MaTour" />
+            </Principal>
+            <Dependent Role="Picture">
+              <PropertyRef Name="MaTour" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HoTro">
+          <End Role="NgonNgu" Type="Self.NgonNgu" Multiplicity="*" />
+          <End Role="Tour" Type="Self.Tour" Multiplicity="*" />
+        </Association>
+        <Association Name="SoHuu">
+          <End Role="Coupon" Type="Self.Coupon" Multiplicity="*" />
+          <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="CNPMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Coupons" EntityType="Self.Coupon" />
+          <EntitySet Name="KhachHangs" EntityType="Self.KhachHang" />
+          <EntitySet Name="LoaiKHs" EntityType="Self.LoaiKH" />
+          <EntitySet Name="LT_Tour" EntityType="Self.LT_Tour" />
+          <EntitySet Name="NgayBans" EntityType="Self.NgayBan" />
+          <EntitySet Name="NgonNgus" EntityType="Self.NgonNgu" />
+          <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
+          <EntitySet Name="PacketTours" EntityType="Self.PacketTour" />
+          <EntitySet Name="Partners" EntityType="Self.Partner" />
+          <EntitySet Name="PhieuDCs" EntityType="Self.PhieuDC" />
+          <EntitySet Name="PhuongThucThanhToans" EntityType="Self.PhuongThucThanhToan" />
+          <EntitySet Name="Pictures" EntityType="Self.Picture" />
+          <EntitySet Name="TKTTs" EntityType="Self.TKTT" />
+          <EntitySet Name="Tours" EntityType="Self.Tour" />
+          <EntitySet Name="UserPoints" EntityType="Self.UserPoint" />
+          <AssociationSet Name="FK__KhachHang__MaLKH__3F466844" Association="Self.FK__KhachHang__MaLKH__3F466844">
+            <End Role="LoaiKH" EntitySet="LoaiKHs" />
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PhieuDC__MaKH__44FF419A" Association="Self.FK__PhieuDC__MaKH__44FF419A">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="PhieuDC" EntitySet="PhieuDCs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserPoints__MaKH__49C3F6B7" Association="Self.FK__UserPoints__MaKH__49C3F6B7">
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+            <End Role="UserPoints" EntitySet="UserPoints" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LT_Tour__MaTour__2B3F6F97" Association="Self.FK__LT_Tour__MaTour__2B3F6F97">
+            <End Role="Tour" EntitySet="Tours" />
+            <End Role="LT_Tour" EntitySet="LT_Tour" />
+          </AssociationSet>
+          <AssociationSet Name="FK__NgayBan__MaPT__4CA06362" Association="Self.FK__NgayBan__MaPT__4CA06362">
+            <End Role="PacketTour" EntitySet="PacketTours" />
+            <End Role="NgayBan" EntitySet="NgayBans" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PacketTou__MaTou__4222D4EF" Association="Self.FK__PacketTou__MaTou__4222D4EF">
+            <End Role="Tour" EntitySet="Tours" />
+            <End Role="PacketTour" EntitySet="PacketTours" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PhieuDC__MaPT__45F365D3" Association="Self.FK__PhieuDC__MaPT__45F365D3">
+            <End Role="PacketTour" EntitySet="PacketTours" />
+            <End Role="PhieuDC" EntitySet="PhieuDCs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TKTT__MaDT__36B12243" Association="Self.FK__TKTT__MaDT__36B12243">
+            <End Role="Partner" EntitySet="Partners" />
+            <End Role="TKTT" EntitySet="TKTTs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tour__MaDT__286302EC" Association="Self.FK__Tour__MaDT__286302EC">
+            <End Role="Partner" EntitySet="Partners" />
+            <End Role="Tour" EntitySet="Tours" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PhieuDC__MaPTTT__46E78A0C" Association="Self.FK__PhieuDC__MaPTTT__46E78A0C">
+            <End Role="PhuongThucThanhToan" EntitySet="PhuongThucThanhToans" />
+            <End Role="PhieuDC" EntitySet="PhieuDCs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Picture__MaTour__2E1BDC42" Association="Self.FK__Picture__MaTour__2E1BDC42">
+            <End Role="Tour" EntitySet="Tours" />
+            <End Role="Picture" EntitySet="Pictures" />
+          </AssociationSet>
+          <AssociationSet Name="HoTro" Association="Self.HoTro">
+            <End Role="NgonNgu" EntitySet="NgonNgus" />
+            <End Role="Tour" EntitySet="Tours" />
+          </AssociationSet>
+          <AssociationSet Name="SoHuu" Association="Self.SoHuu">
+            <End Role="Coupon" EntitySet="Coupons" />
+            <End Role="KhachHang" EntitySet="KhachHangs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CNPMModelStoreContainer" CdmEntityContainer="CNPMEntities">
+          <EntitySetMapping Name="Coupons">
+            <EntityTypeMapping TypeName="CNPMModel.Coupon">
+              <MappingFragment StoreEntitySet="Coupon">
+                <ScalarProperty Name="MaCoupon" ColumnName="MaCoupon" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhachHangs">
+            <EntityTypeMapping TypeName="CNPMModel.KhachHang">
+              <MappingFragment StoreEntitySet="KhachHang">
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="SDT2" ColumnName="SDT2" />
+                <ScalarProperty Name="SDT3" ColumnName="SDT3" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+                <ScalarProperty Name="Email3" ColumnName="Email3" />
+                <ScalarProperty Name="MaLKH" ColumnName="MaLKH" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiKHs">
+            <EntityTypeMapping TypeName="CNPMModel.LoaiKH">
+              <MappingFragment StoreEntitySet="LoaiKH">
+                <ScalarProperty Name="MaLKH" ColumnName="MaLKH" />
+                <ScalarProperty Name="LoaiKH1" ColumnName="LoaiKH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LT_Tour">
+            <EntityTypeMapping TypeName="CNPMModel.LT_Tour">
+              <MappingFragment StoreEntitySet="LT_Tour">
+                <ScalarProperty Name="ID_HD" ColumnName="ID_HD" />
+                <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="GioBD" ColumnName="GioBD" />
+                <ScalarProperty Name="GioKT" ColumnName="GioKT" />
+                <ScalarProperty Name="HoatDong" ColumnName="HoatDong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgayBans">
+            <EntityTypeMapping TypeName="CNPMModel.NgayBan">
+              <MappingFragment StoreEntitySet="NgayBan">
+                <ScalarProperty Name="MaPT" ColumnName="MaPT" />
+                <ScalarProperty Name="SLVeBan" ColumnName="SLVeBan" />
+                <ScalarProperty Name="NgayBD" ColumnName="NgayBD" />
+                <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgonNgus">
+            <EntityTypeMapping TypeName="CNPMModel.NgonNgu">
+              <MappingFragment StoreEntitySet="NgonNgu">
+                <ScalarProperty Name="MaNN" ColumnName="MaNN" />
+                <ScalarProperty Name="TenNN" ColumnName="TenNN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NhanViens">
+            <EntityTypeMapping TypeName="CNPMModel.NhanVien">
+              <MappingFragment StoreEntitySet="NhanVien">
+                <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="TenNV" ColumnName="TenNV" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PacketTours">
+            <EntityTypeMapping TypeName="CNPMModel.PacketTour">
+              <MappingFragment StoreEntitySet="PacketTour">
+                <ScalarProperty Name="MaPT" ColumnName="MaPT" />
+                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="STK_NH" ColumnName="STK_NH" />
+                <ScalarProperty Name="TenPT" ColumnName="TenPT" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="SLVoucher" ColumnName="SLVoucher" />
+                <ScalarProperty Name="Preserve" ColumnName="Preserve" />
+                <ScalarProperty Name="PreserveDays" ColumnName="PreserveDays" />
+                <ScalarProperty Name="DKDK" ColumnName="DKDK" />
+                <ScalarProperty Name="DoiLich" ColumnName="DoiLich" />
+                <ScalarProperty Name="CSDoiLich" ColumnName="CSDoiLich" />
+                <ScalarProperty Name="GiaGoc_A" ColumnName="GiaGoc_A" />
+                <ScalarProperty Name="GiaTraveloka_A" ColumnName="GiaTraveloka_A" />
+                <ScalarProperty Name="GiaGoc_C" ColumnName="GiaGoc_C" />
+                <ScalarProperty Name="GiaTraveloka_C" ColumnName="GiaTraveloka_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partners">
+            <EntityTypeMapping TypeName="CNPMModel.Partner">
+              <MappingFragment StoreEntitySet="Partner">
+                <ScalarProperty Name="MaDT" ColumnName="MaDT" />
+                <ScalarProperty Name="TenDT" ColumnName="TenDT" />
+                <ScalarProperty Name="MaQG" ColumnName="MaQG" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhieuDCs">
+            <EntityTypeMapping TypeName="CNPMModel.PhieuDC">
+              <MappingFragment StoreEntitySet="PhieuDC">
+                <ScalarProperty Name="MaDC" ColumnName="MaDC" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="MaPT" ColumnName="MaPT" />
+                <ScalarProperty Name="MaPTTT" ColumnName="MaPTTT" />
+                <ScalarProperty Name="NgayDatCho" ColumnName="NgayDatCho" />
+                <ScalarProperty Name="Ngaythamquan" ColumnName="Ngaythamquan" />
+                <ScalarProperty Name="TenKH" ColumnName="TenKH" />
+                <ScalarProperty Name="SDTKH" ColumnName="SDTKH" />
+                <ScalarProperty Name="EmailKH" ColumnName="EmailKH" />
+                <ScalarProperty Name="YCThem" ColumnName="YCThem" />
+                <ScalarProperty Name="PickUp" ColumnName="PickUp" />
+                <ScalarProperty Name="Invoice" ColumnName="Invoice" />
+                <ScalarProperty Name="SLAdult" ColumnName="SLAdult" />
+                <ScalarProperty Name="SLChild" ColumnName="SLChild" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhuongThucThanhToans">
+            <EntityTypeMapping TypeName="CNPMModel.PhuongThucThanhToan">
+              <MappingFragment StoreEntitySet="PhuongThucThanhToan">
+                <ScalarProperty Name="MaPTTT" ColumnName="MaPTTT" />
+                <ScalarProperty Name="TenPTTT" ColumnName="TenPTTT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="CNPMModel.Picture">
+              <MappingFragment StoreEntitySet="Picture">
+                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="ImgURL" ColumnName="ImgURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TKTTs">
+            <EntityTypeMapping TypeName="CNPMModel.TKTT">
+              <MappingFragment StoreEntitySet="TKTT">
+                <ScalarProperty Name="STK_NH" ColumnName="STK_NH" />
+                <ScalarProperty Name="TenNH" ColumnName="TenNH" />
+                <ScalarProperty Name="MaDT" ColumnName="MaDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tours">
+            <EntityTypeMapping TypeName="CNPMModel.Tour">
+              <MappingFragment StoreEntitySet="Tour">
+                <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+                <ScalarProperty Name="TenTour" ColumnName="TenTour" />
+                <ScalarProperty Name="DiaDiem" ColumnName="DiaDiem" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TTVC" ColumnName="TTVC" />
+                <ScalarProperty Name="forsale" ColumnName="forsale" />
+                <ScalarProperty Name="BannerUrl" ColumnName="BannerUrl" />
+                <ScalarProperty Name="MaDT" ColumnName="MaDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPoints">
+            <EntityTypeMapping TypeName="CNPMModel.UserPoint">
+              <MappingFragment StoreEntitySet="UserPoints">
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+                <ScalarProperty Name="SLXu" ColumnName="SLXu" />
+                <ScalarProperty Name="ActiDate" ColumnName="ActiDate" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+                <ScalarProperty Name="expState" ColumnName="expState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="HoTro" TypeName="CNPMModel.HoTro" StoreEntitySet="HoTro">
+            <EndProperty Name="NgonNgu">
+              <ScalarProperty Name="MaNN" ColumnName="MaNN" />
+            </EndProperty>
+            <EndProperty Name="Tour">
+              <ScalarProperty Name="MaTour" ColumnName="MaTour" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="SoHuu" TypeName="CNPMModel.SoHuu" StoreEntitySet="SoHuu">
+            <EndProperty Name="Coupon">
+              <ScalarProperty Name="MaCoupon" ColumnName="MaCoupon" />
+            </EndProperty>
+            <EndProperty Name="KhachHang">
+              <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

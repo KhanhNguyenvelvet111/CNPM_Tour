@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<CNPM_Tour.Models.Partner>
 @{
     ViewBag.Title = "QLDoiTac";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
@@ -6,5 +6,89 @@
     ViewBag.qldt = "active";
 }
 
-<h2>QLDoiTac</h2>
+<body>
+    @* table 1*@
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="~/Admin/TaoDoiTac">
+                <i class="fas fa-plus"> </i> Thêm Đối tác
+            </a>
+            <a class="btn btn-sm btn-print " type="button" title="In danh sách" href="#" onclick="printDiv('printMe')">
+                <i class="fas fa-solid fa-print"> </i>  In danh sách
+            </a>
+            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="~/Admin/QLDoiTac">
+                <i class="fas fa-solid fa-print"> </i>  Làm mới danh sách
+            </a>
+
+            <div class="tile" id="printMe">
+                <h2 class="tile-title">Danh sách Tour</h2>
+                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TenDT)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaQG)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SDT)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DiaChi)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Website)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenDT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaQG)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SDT)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DiaChi)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Website)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.MaDT }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.MaDT }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.MaDT })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        //In dữ liệu
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+</body>
 

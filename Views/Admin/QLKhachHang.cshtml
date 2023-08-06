@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<CNPM_Tour.Models.KhachHang>
 @{
     ViewBag.Title = "QLKhachHang";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
@@ -6,5 +6,110 @@
     ViewBag.qlkh = "active";
 }
 
-<h2>QLKhachHang</h2>
+<body>
+    @* table 1*@
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="~/Admin/TaoKhachHang">
+                <i class="fas fa-plus"> </i> Thêm Khách hàng
+            </a>
+            <a class="btn btn-sm btn-print " type="button" title="In danh sách" href="#" onclick="printDiv('printMe')">
+                <i class="fas fa-solid fa-print"> </i>  In danh sách
+            </a>
+            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="~/Admin/QLKhachHang">
+                <i class="fas fa-solid fa-print"> </i>  Làm mới danh sách
+            </a>
+
+            <div class="tile" id="printMe">
+
+                <h2 class="tile-title">Danh sách Khách hàng</h2>
+                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
+
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaKH)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TenKH)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.GioiTinh)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NgaySinh)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.Email)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SDT)
+                            </th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.LoaiKH.LoaiKH1)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UserPoint.MaKH)
+                            </th>
+                            <th>
+                                <span> Chức năng</span>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th>
+                                    @Html.DisplayFor(modelItem => item.MaKH)
+                                </th>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenKH)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.GioiTinh)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgaySinh)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SDT)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LoaiKH.LoaiKH1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UserPoint.MaKH)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Details", "KhachHangDetails", new { id = item.MaKH }) |
+                                    @Html.ActionLink("Lịch sử", "#", new { id = item.MaKH })
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        //In dữ liệu
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+</body>
 

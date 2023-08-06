@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<CNPM_Tour.Models.Coupon>
 @{
     ViewBag.Title = "ChuongTrinhKhuyenMai";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
@@ -6,5 +6,71 @@
     ViewBag.ctkm = "active";
 }
 
-<h2>ChuongTrinhKhuyenMai</h2>
+<body>
+    @* table 1*@
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="~/Admin/TaoCTKM">
+                <i class="fas fa-plus"> </i> Thêm CTKM
+            </a>
+            <a class="btn btn-sm btn-print " type="button" title="In danh sách" href="#" onclick="printDiv('printMe')">
+                <i class="fas fa-solid fa-print"> </i>  In danh sách
+            </a>
+            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="~/Admin/ChuongTrinhKhuyenMai">
+                <i class="fas fa-solid fa-print"> </i>  Làm mới danh sách
+            </a>
 
+            <div class="tile" id="printMe">
+
+                <h2 class="tile-title">Danh sách Chương trình khuyến mãi</h2>
+                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaCoupon)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Discount)
+                            </th>
+                            <th>
+                                <span> Chức năng</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaCoupon)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Discount)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "ChinhSuaCTKM", new { id = item.MaCoupon }) |
+                                    @Html.ActionLink("Details", "CTKMDetails", new { id = item.MaCoupon }) |
+                                    @Html.ActionLink("Delete", "XoaCTKM", new { id = item.MaCoupon })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                @*<a class="btn btn-cancel" title="Trở lại" href="~/Tourmanager/QuanLyTour">
+                        Trở lại
+                    </a>*@
+            </div>
+        </div>
+    </div>
+    <script>
+        //In dữ liệu
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+</body>

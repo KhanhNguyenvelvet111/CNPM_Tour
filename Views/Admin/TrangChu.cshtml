@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<CNPM_Tour.Models.Tour>
 @{
     ViewBag.Title = "TrangChu";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
@@ -15,57 +15,70 @@
                 <h2 class="tile-title">Tour đã thêm gần đây</h2>
 
                 @*<a class="btn btn-sm btn-add " type="button" title="CreateTour" href="/Tourmanager/CreateLoaiTour">
-                        <i class="fas fa-plus"> </i> Tạo mới*@
-                    </a>
-                <table class="table table-hover table-bordered js-copytextarea no-footer" cellpadding="0" cellspacing="0" border="0"  role="grid" aria-describedby="sampleTable_info">
-                    <thead>
+                        <i class="fas fa-plus"> </i> Tạo mới
+                    </a>*@
+                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
+
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MaTour)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TenTour)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DiaDiem)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MoTa)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TTVC)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.forsale)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.BannerUrl)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Partner.TenDT)
+                        </th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
                         <tr>
-                            <th>Mã tour</th>
-                            <th>
-                                Tên tour
-                            </th>
-                            <th>
-                                Thời gian mở bán
-                            </th>
-                            <th>
-                                Giá vé (VND)
-                            </th>
-                            <th>
-                                Ghi chú
-                            </th>
-                            <th>
-                                Chức năng
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-center">
-                                gdfgdfg
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MaTour)
                             </td>
-                            <td class="text-center">
-                                g dfgd dfg
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TenTour)
                             </td>
-                            <td class="text-center">
-                                dsgf gdf
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DiaDiem)
                             </td>
-                            <td class="text-center">
-                                dsgf gdf
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MoTa)
                             </td>
-                            <td class="text-center">
-                                dsgf gdf
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TTVC)
                             </td>
-                            <td class="text-center">
-                                sdfgdfg
-                                @*<a class="btn btn-cancel" title="Edit" href="#">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                    <a class="btn btn-excel" ata-toggle="tooltip" title="Delete" data-target="#" data-toggle="modal">
-                                        <i class="fas fa-trash"></i>
-                                    </a>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.forsale)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BannerUrl)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Partner.TenDT)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "ChinhSuaTour", new { id = item.MaTour }) |
+                                @Html.ActionLink("Details", "TourDetails", new { id = item.MaTour }) |
+                                @Html.ActionLink("Delete", "XoaTour", new { id = item.MaTour })
                             </td>
                         </tr>
-                    </tbody>
+                    }
                 </table>
                 @*<a class="btn btn-cancel" title="Trở lại" href="~/Tourmanager/QuanLyTour">
                         Trở lại

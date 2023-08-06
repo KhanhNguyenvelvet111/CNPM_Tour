@@ -1,10 +1,90 @@
-﻿
+﻿@model IEnumerable<CNPM_Tour.Models.Tour>
 @{
     ViewBag.Title = "BaoCaoTaiChinh";
     Layout = "~/Views/Admin/Layout/_Admin.cshtml";
-    ViewBag.Name = "Báo cáo tài chính";
-    ViewBag.bctc = "active";
+    ViewBag.Name = "Báo cáo tài chính";    
 }
 
-<h2>BaoCaoTaiChinh</h2>
+<body>
+    @* table 1*@
+    <div class="row">
+        <div class="col-md-12">
+            <a class="btn btn-sm btn-add " type="button" title="Thêm Tour" href="~/Admin/TaoBCTC">
+                <i class="fas fa-plus"> </i> Tạo BCTC
+            </a>
+            <a class="btn btn-sm btn-print " type="button" title="In danh sách" href="#" onclick="printDiv('printMe')">
+                <i class="fas fa-solid fa-print"> </i>  In danh sách
+            </a>
+            <a class="btn btn-sm btn-refresh " type="button" title="In danh sách" href="~/Admin/QLTour">
+                <i class="fas fa-solid fa-print"> </i>  Làm mới danh sách
+            </a>
 
+            <div class="tile" id="printMe">
+                <h2 class="tile-title">Báo cáo tài chính</h2>
+                <table class="table table-hover table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" id="sampleTable" role="grid" aria-describedby="sampleTable_info">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.MaTour)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TenTour)
+                            </th>                          
+                            <th>
+                                <span>Thời gian mở bán</span>
+                            </th>
+                            <th>
+                                <span>Doanh thu</span>
+                            </th>
+
+                            <th>
+                                <span>Tổng doanh thu</span>
+                            </th>
+                            <th>
+                                <span> Chức năng</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MaTour)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenTour)
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                              
+                                <td style="text-align:center">                                   
+                                    @Html.ActionLink("Details", "BCTCDetails", new { id = item.MaTour }) 
+                                    
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        //In dữ liệu
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+</body>

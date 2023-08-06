@@ -1,0 +1,70 @@
+﻿@model CNPM_Tour.Models.Tour
+
+@{
+    ViewBag.Title = "TaoBCTC";
+    Layout = "~/Views/Admin/Layout/_Admin.cshtml";
+    ViewBag.Name = "Báo cáo tài chính";
+
+}
+<body>
+    <div class="" style="width: 185px; white-space: nowrap; margin: 4px auto; border: 2px solid #000; border-radius: 10px; padding-top: 10px; ">
+        <div class="" style="height: 100%;   display: flex;   justify-content: center;   align-items: center;">
+            <p class="" style="font-size: 24px;  font-weight: bold;">Chi tiết tour</p>
+        </div>
+    </div>
+
+    @* table 1*@
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <form action="/action_page.php">
+                    <table class="table table-bordered js-copytextarea dataTable no-footer" cellpadding="0" cellspacing="0" border="0" role="grid" aria-describedby="sampleTable_info">
+                        <h2 class="tile-title">Tour @Html.DisplayFor(model => Model.MaTour)</h2>
+                        <tr style="display:flex;width:100%">
+                            <td>
+                                <label for="fname">Mã tour:</label>
+                                @Html.DisplayFor(model => model.MaTour)
+                                @*<input type="text" id="fname" name="fname" style="border:none ; width:auto">*@
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label for="fname">Tên tour:</label>
+                                @Html.DisplayFor(model => model.TenTour)
+
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="fname">Thời gian mở bán:</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="fname">Doanh thu:</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="fname">Tổng doanh thu:</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="fname">Chức năng:</label>
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+                    <div class=" col-12" style="white-space: nowrap; margin: 4px auto; border: 2px solid #000; padding: 10px 10px 10px 10px; font-size: 20px; text-align: center; max-width: fit-content; font-weight: bold; border-radius: 5px; margin-left: inherit;">
+                        @Html.ActionLink("Quay lại", "BaoCaoTaiChinh")
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
